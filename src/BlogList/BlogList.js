@@ -7,13 +7,15 @@ export default class BlogList extends Component {
         const {index} = this.props;
         return (
             <div className="column is-9 is-10-widescreen">
-                { 
-                    index === `2018`? 
-                    <Blog2018 />
-                    :index === `2019`?
-                    <Blog2019 />
-                    :null
-                }
+                <div className="columns is-multiline shuffle" id="grid">
+                    { 
+                        index === `2018`? 
+                        <Blog2018 />
+                        :index === `2019`?
+                        <Blog2019 />
+                        :null
+                    }
+                </div>
             </div>
         );
     }
