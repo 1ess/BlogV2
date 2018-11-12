@@ -1,0 +1,24 @@
+.special-container {
+    min-height: 100vh
+}
+
+#blog-footer {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto
+}
+
+@media screen and (max-width:768px),
+print {
+    #blog-footer {
+        max-height: 0
+    }
+}
+
+.present-icon {
+    border-radius: 3px
+}
+
+.bg-gray {
+    background: #fdfdfd
+}
