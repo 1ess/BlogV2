@@ -413,6 +413,11 @@ export default class Blog2018 extends Component {
                     "title": `闲聊`,
                     "date_time": `Nov 2`,
                     "summary": `你们这伙没胆量的下流东西！不要跑！来跟你们厮杀的只是个单枪匹马的骑士！`
+                },
+                {
+                    "title": `论使用国内开源项目有感`,
+                    "date_time": `Nov 15`,
+                    "summary": `最近公司准备开发微信小程序，之前也研究过一段时间，写过几个 Demo，感觉原生开发有些笨重。`
                 }
             ]
         }
