@@ -16,11 +16,22 @@ ReactDOM.render((
     </Router>
 ), document.getElementById('root'));
 
-// import * as serviceWorker from './serviceWorker';
+document.addEventListener('visibilitychange', function() {
+    const isHidden = document.hidden;
+    const originTitile = document.title;
+    const title = originTitile.substring(2).trim();
+    document.title = (isHidden ?  "💔 " :  "❤️ ") + title
+});
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+function getMultiLine(lines) {
+    lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));
+    return lines;
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+var slogan = 
+`/*
+谁终将声震人间, 必长久深自缄默。
+
+谁终将点燃闪电, 必长久如云飘泊。
+*/`
+window.console.log(getMultiLine(slogan));

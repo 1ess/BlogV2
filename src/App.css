@@ -7140,7 +7140,7 @@ html.has-navbar-fixed-bottom {
   position: absolute;
   transform-origin: center;
   transition-duration: 86ms;
-  transition-property: background-color, opacity, transform;
+  transition: background-color, opacity, transform;
   transition-timing-function: ease-out;
   width: 16px
 }
@@ -7485,7 +7485,7 @@ a.navbar-link.is-active {
       top: calc(100%+(-4px));
       transform: translateY(-5px);
       transition-duration: 86ms;
-      transition-property: opacity, transform
+      transition: opacity, transform
   }
 
   .navbar-dropdown.is-right {
@@ -12784,7 +12784,7 @@ button:focus {
   visibility: hidden;
   transform: translateY(5%);
   transition-duration: 688ms, 688ms;
-  transition-property: transform, opacity
+  transition: transform, opacity
 }
 
 .screens .screen.is-active {
