@@ -11,7 +11,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <Header symbol={`❤️`} home_link={`/`} blog_link={`/blog/2018`} />
+        <Header symbol={`❤️`} selectedIndex={0} />
         <Main />
       </div>
     );

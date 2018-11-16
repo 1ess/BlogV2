@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import NavLinks from '../NavLinks/NavLinks'
 import burger from '../ev'
 import '../App.css';
 import icon from '../icon.jpg'
 
-const NavLink = ({ home_link, blog_link, index }) => (
+const Nav = ({ selectedIndex }) => (
     <div className="navbar-menu" id="mainNav">
         <div className="navbar-end">
-            <Link className={(`navbar-item ` + (!index ? `is-active` : ``)).trim()} to={home_link}>Home</Link>
-            <Link className={(`navbar-item ` + (index ? `is-active` : ``)).trim()} to={blog_link}>Blog</Link>
+            <NavLinks selectedIndex={selectedIndex} />
             <a href="https://www.zhihu.com/people/19921213/answers" className="navbar-item">Zhihu</a>
             <a href="https://github.com/GodzzZZZ" className="navbar-item">GitHub</a>
         </div>
@@ -40,14 +39,14 @@ export default class Header extends Component {
     }
 
     render() {
-      const { symbol, home_link, blog_link, index } = this.props;
+      const { symbol, selectedIndex } = this.props;
 
       return (
         <header className="app-header">
           <nav className="navbar is-fixed-top is-small">
                 <div className="container">
                     <NavBrand icon={icon} symbol={symbol} />
-                    <NavLink index={index} home_link={home_link} blog_link={blog_link} />
+                    <Nav selectedIndex={selectedIndex} />
                 </div>
             </nav>
         </header>

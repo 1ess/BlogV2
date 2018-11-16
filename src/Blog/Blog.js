@@ -21,7 +21,7 @@ export default class Blog extends Component {
   render() {
     return (
       <div className={`app-container`}>
-        <Header symbol={`❤️`} home_link={`/`} blog_link={`/blog/2018`} index={1}/>
+        <Header symbol={`❤️`} selectedIndex={1} />
         <BlogContainer index={this.state.index} />
         <Footer />
       </div>
