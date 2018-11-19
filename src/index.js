@@ -34,4 +34,8 @@ var slogan =
 
 谁终将点燃闪电, 必长久如云飘泊。
 */`
-window.console.log(getMultiLine(slogan));
+var style = [
+    'color: #a0a0a0',
+    'font-size: 18px',
+].join(';');
+window.console.log('%c%s', style, getMultiLine(slogan));
