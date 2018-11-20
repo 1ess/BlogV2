@@ -13723,6 +13723,6 @@ a strong {
   text-align: center;
 }
 
-.cms-title {
-  padding-top: 50px;
+.kernel-panic {
+  padding-top: 6rem !important;
 }
