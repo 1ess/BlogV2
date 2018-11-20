@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PanicItem from '../PanicItem/PanicItem';
 import Header from '../Header/Header';
 import axios from 'axios';
