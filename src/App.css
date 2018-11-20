@@ -13686,3 +13686,43 @@ a strong {
 .present-icon {
   border-radius: 3px
 }
+
+.spacer.is-horizontal {
+  display: inline-block;
+}
+.is-05 {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.sharp-num {
+  color: rgba(153,141,160,0.25);
+}
+
+.panic-item {
+  margin: 2rem;
+}
+
+.panic-title {
+  margin-bottom: 0 !important ;
+}
+
+.panic-subtitle {
+  font-size: 1.1rem;
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.is-loading {
+  color: #dedede;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: calc(100vh - 300px);
+  height: calc(100vh - 300px);
+  width: 100%;
+  text-align: center;
+}
+
+.cms-title {
+  padding-top: 50px;
+}
