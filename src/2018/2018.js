@@ -53,7 +53,7 @@ export default class Blog2018 extends Component {
                     :
                     !items.length
                     ?
-                    <p className={`is-loading`}>博客为空</p>
+                    <p className={`is-loading`}>Kernel Panic</p>
                     :
                     items.map((item, index)=>(<BlogItem key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />))
                 }
