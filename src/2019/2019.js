@@ -43,15 +43,15 @@ export default class Blog2019 extends Component {
                 {
                     isLoading 
                     ? 
-                    <p className={` is-loading`}>Loading ...</p>
+                    <p className={`kernel-is-loading`}>Loading ...</p>
                     :
                     error 
                     ?
-                    <p className={` is-loading`}>加载失败</p>
+                    <p className={`kernel-is-loading`}>加载失败</p>
                     :
                     !items.length
                     ?
-                    <p className={`is-loading`}>Kernel Panic</p>
+                    <p className={`kernel-is-loading`}>Kernel Panic</p>
                     :
                     items.map((item, index)=>(<BlogItem key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />))
                 }

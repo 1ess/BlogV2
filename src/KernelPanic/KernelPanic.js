@@ -91,7 +91,6 @@ export default class KernelPanic extends Component {
                     url: 'https://api.godzzzzz.club/api/blogs/year/all',
                     data: {}
                 }).then(function (response) {
-                    console.log(response);
                     self.setState({
                         items: response.data,
                         isLoading: false,
@@ -144,7 +143,6 @@ export default class KernelPanic extends Component {
                     url: 'https://api.godzzzzz.club/api/blogs/year/all',
                     data: {}
                 }).then(function (response) {
-                    console.log(response);
                     self.setState({
                         items: response.data,
                         isLoading: false,
@@ -157,11 +155,9 @@ export default class KernelPanic extends Component {
                         error: true
                     })
                 }).then(function () {
-                    console.log('always1');
                 })
                 
             }).catch(function (error) {
-                console.log(error);
             }).then(function () {
             })
         }else {
@@ -187,7 +183,6 @@ export default class KernelPanic extends Component {
                     url: 'https://api.godzzzzz.club/api/blogs/year/all',
                     data: {}
                 }).then(function (response) {
-                    console.log(response);
                     self.setState({
                         items: response.data,
                         isLoading: false,
@@ -200,11 +195,9 @@ export default class KernelPanic extends Component {
                         error: true
                     })
                 }).then(function () {
-                    console.log('always1');
                 })
                 
             }).catch(function (error) {
-                console.log(error);
             }).then(function () {
             })
         }
@@ -260,23 +253,6 @@ export default class KernelPanic extends Component {
                                             <span className={`spacer is-horizontal is-05`}> </span>
                                             <span className={`tag is-warning is-uppercase`}>Beta</span>
                                         </h2>
-                                        {
-                                            isLoading 
-                                            ? 
-                                            <p className={`has-text-centered kernel-is-loading`}>Loading ...</p>
-                                            :
-                                            error 
-                                            ?
-                                            <p className={`has-text-centered kernel-is-loading`}>Kernel Panic</p>
-                                            :
-                                            <ul className={`numbered-list`}>
-                                                {
-                                                    items.map((item) => (
-                                                        <PanicItem key={item.id} id={item.id} tag={item.tag} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={this.handleItemClick}/>
-                                                    ))
-                                                }
-                                            </ul>
-                                        }
                                     </div>
                                 </div>                            
                             </div>
@@ -284,7 +260,7 @@ export default class KernelPanic extends Component {
                             {
                                 showMenu
                                 ?
-                                <div className={`column is-4 is-offset-6`}>
+                                <div className={`column is-4 is-offset-4`}>
                                     <div className={`rows`}>
                                         <div className={`field row`}>
                                             <div className={`control`}>
@@ -337,10 +313,10 @@ export default class KernelPanic extends Component {
                                     isLoading 
                                     || 
                                     <Fragment>
-                                        <div className={`column is-2 is-offset-6`} style={showMenu ? {} : {display: `none`}}>
+                                        <div className={`column is-2 is-offset-4`} style={showMenu ? {} : {display: `none`}}>
                                             <button onClick={this.handleCancelClick} className={`button is-light`} ><span className ="emoji" role ="img" aria-label="heart">{cancelSymbol}</span>Cancel.</button>
                                         </div>
-                                        <div className={(`column is-2 ` + (showMenu ? ``: `is-offset-8`)).trim()}>
+                                        <div className={(`column is-2 ` + (showMenu ? ``: `is-offset-5`)).trim()}>
                                             <button onClick={this.handleClick} className={(`button is-warning ` + ((showMenu && createButtonLoading) ? `is-loading` : ``)).trim()} ><span className ="emoji" role ="img" aria-label="heart">{symbol}</span> 
                                             {
                                                 showMenu ? `Ensure`: `Create`
@@ -349,6 +325,30 @@ export default class KernelPanic extends Component {
                                         </div>
                                     </Fragment>
                                 }
+                            </div>
+                            
+                            <div className={`columns has-equal-heights reverse`}>
+                                <div className={`column is-8 is-offset-2`}>
+                                    <div className={`section-header`}>
+                                        {
+                                            isLoading 
+                                            ? 
+                                            <p className={`has-text-centered kernel-is-loading`}>Loading ...</p>
+                                            :
+                                            error 
+                                            ?
+                                            <p className={`has-text-centered kernel-is-loading`}>Kernel Panic</p>
+                                            :
+                                            <ul className={`numbered-list`}>
+                                                {
+                                                    items.map((item) => (
+                                                        <PanicItem key={item.id} id={item.id} tag={item.tag} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={this.handleItemClick}/>
+                                                    ))
+                                                }
+                                            </ul>
+                                        }
+                                    </div>
+                                </div>                            
                             </div>
                         </div>
                     </div>                        
