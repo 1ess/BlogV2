@@ -13728,3 +13728,20 @@ a strong {
 .kernel-panic {
   padding-top: 6rem !important;
 }
+
+.tag-title {
+  /* font-weight: bold; */
+  font-size: 1.4rem;
+}
+
+.success-toast {
+  background: rgba(46, 204, 113, 1) !important;
+  border-radius: 3px !important;
+  text-align: center;
+}
+
+.error-toast {
+  background: rgba(231, 76, 60, 1) !important;
+  border-radius: 3px !important;
+  text-align: center;
+}

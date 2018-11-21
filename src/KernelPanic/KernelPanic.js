@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import PanicItem from '../PanicItem/PanicItem';
 import Header from '../Header/Header';
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
+import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 
 export default class KernelPanic extends Component {
@@ -81,6 +83,12 @@ export default class KernelPanic extends Component {
                     tag: parseInt(tag)
                 }]
             }).then(function (response) {
+                toast.success("Add Successful!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `success-toast`
+                });
                 self.setState({
                     showMenu: false,
                     isLoading: true,
@@ -110,9 +118,12 @@ export default class KernelPanic extends Component {
                     
                 })
             }).catch(function (error) {
-                self.setState({
-                    showMenu: false
-                })
+                toast.error("Add Failure!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `error-toast`
+                });
             }).then(function () {
                 self.setState({
                     createButtonLoading: false
@@ -134,6 +145,12 @@ export default class KernelPanic extends Component {
                 url: `https://api.godzzzzz.club/api/blogs/${id}`,
                 data: {}
             }).then(function (response) {
+                toast.success("Delete Successful!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `success-toast`
+                });
                 self.setState({
                     isLoading: true,
                     error: false
@@ -158,6 +175,12 @@ export default class KernelPanic extends Component {
                 })
                 
             }).catch(function (error) {
+                toast.error("Delete Failure!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `error-toast`
+                });
             }).then(function () {
             })
         }else {
@@ -173,7 +196,12 @@ export default class KernelPanic extends Component {
                     tag
                 }
             }).then(function (response) {
-                
+                toast.success("Update Successful!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `success-toast`
+                });
                 self.setState({
                     isLoading: true,
                     error: false
@@ -198,6 +226,12 @@ export default class KernelPanic extends Component {
                 })
                 
             }).catch(function (error) {
+                toast.error("Update Failure!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `error-toast`
+                });
             }).then(function () {
             })
         }
@@ -241,6 +275,7 @@ export default class KernelPanic extends Component {
               } = this.state;
         return (                
             <div className={`app-container`}>
+                <ToastContainer />
                 <Header symbol={`❤️`} selectedIndex={3} />
                 <div className={`app-content has-background`}>
                     <div className={`hero is-medium`}>
@@ -265,7 +300,7 @@ export default class KernelPanic extends Component {
                                         <div className={`field row`}>
                                             <div className={`control`}>
                                                 <div className={`columns`}>
-                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle`}># Tag</label></div>
+                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}># Tag</label></div>
                                                     <div className={`column is-9`}><input className={`input is-medium`} type="tel" placeholder="type Tag" value={tag} onChange={this.handleTagChange}/></div>
                                                 </div>
                                             </div>
@@ -273,7 +308,7 @@ export default class KernelPanic extends Component {
                                         <div className={`field row`}>
                                             <div className={`control`}>
                                                 <div className={`columns`}>
-                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle`}># Ttitle</label></div>
+                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}># Ttitle</label></div>
                                                     <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Ttitle" value={title} onChange={this.handleTitleChange}/></div>
                                                 </div>
                                             </div>
@@ -281,7 +316,7 @@ export default class KernelPanic extends Component {
                                         <div className={`field row`}>
                                             <div className={`control`}>
                                                 <div className={`columns`}>
-                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle`}># Year</label></div>
+                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}># Year</label></div>
                                                     <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Year" value={year} onChange={this.handleYearChange}/></div>
                                                 </div>
                                             </div>
@@ -289,7 +324,7 @@ export default class KernelPanic extends Component {
                                         <div className={`field row`}>
                                             <div className={`control`}>
                                                 <div className={`columns`}>
-                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle`}># Date</label></div>
+                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}># Date</label></div>
                                                     <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Date" value={date} onChange={this.handleDateChange}/></div>
                                                 </div>
                                             </div>
@@ -297,7 +332,7 @@ export default class KernelPanic extends Component {
                                         <div className={`field row`}>
                                             <div className={`control`}>
                                                 <div className={`columns`}>
-                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle`}># Summary</label></div>
+                                                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}># Summary</label></div>
                                                     <div className={`column is-9`}><textarea className={`textarea`} type="text" placeholder="type Summary" value={summary} onChange={this.handleSummaryChange}/></div>
                                                 </div>
                                             </div>
