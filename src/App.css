@@ -13700,7 +13700,9 @@ a strong {
 }
 
 .panic-item {
-  margin: 2rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
 .panic-title {
@@ -13713,7 +13715,7 @@ a strong {
   margin-bottom: 0.5rem !important;
 }
 
-.is-loading {
+.kernel-is-loading {
   color: #dedede;
   font-size: 2rem;
   font-weight: 500;

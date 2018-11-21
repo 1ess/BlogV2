@@ -15,7 +15,6 @@ export default class Blog2019 extends Component {
     }
 
     componentDidMount() {
-        console.log(1);
         const self = this;
         axios({
             method: 'get',
