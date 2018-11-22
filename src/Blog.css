@@ -22,3 +22,7 @@ print {
 .bg-gray {
     background: #fdfdfd
 }
+ 
+.blog-alpha {
+    transition: opacity 300ms ease-in;
+}

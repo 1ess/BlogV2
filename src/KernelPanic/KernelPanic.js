@@ -7,9 +7,9 @@ import axios from 'axios';
 
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
+import '../Blog.css';
 
 export default class KernelPanic extends Component {
-
     constructor(props) {
         super(props);
         const date = new Date();
@@ -26,7 +26,7 @@ export default class KernelPanic extends Component {
             summary: '',
             year,
             tag: '',
-            
+
             showMenu: false,
             createButtonLoading: false,
             logined: false
@@ -104,7 +104,7 @@ export default class KernelPanic extends Component {
                 });
                 self.setState({
                     showMenu: false,
-                    isLoading: true,
+                    isLoading: false,
                     error: false
                 });
                 axios({
@@ -149,8 +149,12 @@ export default class KernelPanic extends Component {
     }
         
 
-    handleItemClick = ({ id, tag, title, date, summary, year }) => {
+    handleItemClick = ({ id, tag, title, date, summary, year, prevTag, prevTitle, prevDate, prevSummary, prevYear, tagRef, titleRef, dateRef, yearRef, summaryRef }) => {
         const self = this;
+        if ((tag === String(prevTag)) && (title === prevTitle) && (date === prevDate) && (year === prevYear) && (summary === prevSummary)) {
+            return;
+        }
+
         if (tag === `fee1dead`) {
             axios({
                 method: 'delete',
@@ -164,7 +168,7 @@ export default class KernelPanic extends Component {
                     className: `success-toast`
                 });
                 self.setState({
-                    isLoading: true,
+                    isLoading: false,
                     error: false
                 });
                 axios({
@@ -193,6 +197,11 @@ export default class KernelPanic extends Component {
                     draggable: true,
                     className: `error-toast`
                 });
+                tagRef.current.innerText = prevTag;
+                titleRef.current.innerText = prevTitle;
+                dateRef.current.innerText = `  ` + prevDate;
+                yearRef.current.innerText = prevYear;
+                summaryRef.current.innerText = prevSummary;
             }).then(function () {
             })
         }else {
@@ -215,7 +224,7 @@ export default class KernelPanic extends Component {
                     className: `success-toast`
                 });
                 self.setState({
-                    isLoading: true,
+                    isLoading: false,
                     error: false
                 });
                 axios({
@@ -244,6 +253,11 @@ export default class KernelPanic extends Component {
                     draggable: true,
                     className: `error-toast`
                 });
+                tagRef.current.innerText = prevTag;
+                titleRef.current.innerText = prevTitle;
+                dateRef.current.innerText = `  ` + prevDate;
+                yearRef.current.innerText = prevYear;
+                summaryRef.current.innerText = prevSummary;
             }).then(function () {
             })
         }
@@ -385,7 +399,6 @@ export default class KernelPanic extends Component {
                                         </Fragment>
                                     }
                                 </div>
-                                
                                 <div className={`columns has-equal-heights reverse`}>
                                     <div className={`column is-8 is-offset-2`}>
                                         <div className={`section-header`}>
@@ -401,7 +414,7 @@ export default class KernelPanic extends Component {
                                                 <ul className={`numbered-list`}>
                                                     {
                                                         items.map((item) => (
-                                                            <PanicItem key={item.id} id={item.id} tag={item.tag} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={this.handleItemClick}/>
+                                                            <PanicItem key={item.id} id={item.id} tag={item.tag} prevTag={item.tag} title={item.title} prevTitle={item.title} date={item.date} prevDate={item.date} summary={item.summary} prevSummary={item.summary} year={item.year} prevYear={item.year} handleItemClick={this.handleItemClick}/>
                                                         ))
                                                     }
                                                 </ul>

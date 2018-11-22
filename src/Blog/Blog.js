@@ -8,23 +8,23 @@ export default class Blog extends Component {
   constructor(props){
     super(props);
     this.state = {
-      index: this.props.match.params.index
+      	index: this.props.match.params.index
     }
   }
 
-  componentWillReceiveProps(props) {
+  handleYearChange = (index) => {
     this.setState({
-      index: props.match.params.index
+    	index: index
     })
   }
 
   render() {
     return (
-      <div className={`app-container`}>
-        <Header symbol={`❤️`} selectedIndex={1} />
-        <BlogContainer index={this.state.index} />
-        <Footer />
-      </div>
+		<div className={`app-container`}>
+			<Header symbol={`❤️`} selectedIndex={1} />
+			<BlogContainer index={this.state.index} handleYearChange={this.handleYearChange}/>
+			<Footer />
+		</div>
     );
   }
 }

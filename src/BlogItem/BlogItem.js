@@ -21,8 +21,8 @@ const CardBody = ({number, title, date_time, summary}) => (
     </div>
 )
 
-const Card = ({number, title, date_time, summary}) => (
-    <div className="card is-storyworld">
+const Card = ({number, title, date_time, summary, className}) => (
+    <div className={`card is-storyworld`}>
         <CardHeader number={number} />
         <CardBody number={number} title={title} date_time={date_time} summary={summary} />
         <CardFooter number={number} />

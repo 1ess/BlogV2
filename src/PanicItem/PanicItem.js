@@ -23,7 +23,7 @@ export default class PanicItem extends Component {
     }
 
     handleClick = () => {
-        const { handleItemClick } = this.props;
+        const { handleItemClick, prevTag, prevTitle, prevDate, prevYear, prevSummary } = this.props;
         this.setState((prevState) => ({
             contentEditable: !prevState.contentEditable
         }));
@@ -34,7 +34,17 @@ export default class PanicItem extends Component {
                 title: this.titleRef.current.innerText,
                 date: this.dateRef.current.innerText,
                 year: this.yearRef.current.innerText,
-                summary: this.summaryRef.current.innerText
+                summary: this.summaryRef.current.innerText,
+                prevTag,
+                prevTitle,
+                prevDate,
+                prevYear,
+                prevSummary,
+                tagRef: this.tagRef,
+                titleRef: this.titleRef,
+                dateRef: this.dateRef,
+                yearRef: this.yearRef,
+                summaryRef: this.summaryRef
             });
         }
     }
@@ -49,8 +59,8 @@ export default class PanicItem extends Component {
                 <span className={`sharp-num`}> - </span>
                 <span className={`title is-4 has-text-weight-normal panic-title`} suppressContentEditableWarning  contentEditable={contentEditable} ref={this.titleRef}>{title} </span>
                 <h4>
-                    <span className={`subtitle panic-subtitle`} suppressContentEditableWarning  contentEditable={contentEditable} ref={this.yearRef}>{year} </span>
-                    <span className={`subtitle panic-subtitle`} suppressContentEditableWarning  contentEditable={contentEditable} ref={this.dateRef}>{date}</span>
+                    <span className={`subtitle panic-subtitle`} suppressContentEditableWarning  contentEditable={contentEditable} ref={this.yearRef}>{year}</span>
+                    <span className={`subtitle panic-subtitle`} suppressContentEditableWarning  contentEditable={contentEditable} ref={this.dateRef}>{`  ` + date}</span>
                 </h4>
                 <p suppressContentEditableWarning  contentEditable={contentEditable} ref={this.summaryRef}>{summary}</p>
             </li>

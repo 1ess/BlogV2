@@ -9,52 +9,37 @@ export default class Blog2018 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
-            isLoading: true,
-            error: false
-        }
+            items: []
+        };
     }
 
     componentDidMount() {
         const self = this;
+        const {handleAlphaChange} = this.props;
         axios({
             method: 'get',
             url: 'https://api.godzzzzz.club/api/blogs/year/2018',
             data: {}
         }).then(function (response) {
             self.setState({
-                items: response.data,
-                isLoading: false,
-                error: false
-            })
+                items: response.data
+            });
+            handleAlphaChange(1);
         }).catch(function (error) {
-            self.setState({
-                isLoading: false,
-                error: true
-            })
-        }).then(function () {
             
-        })
+        }).then(function () {
+        });
     }
 
     render() {
-        const {items, isLoading, error} = this.state;
+        const { items } = this.state;
         return (
             <Fragment>
                 {
-                    isLoading 
-                    ? 
-                    <p className={`kernel-is-loading`}>Loading ...</p>
-                    :
-                    error 
-                    ?
-                    <p className={`kernel-is-loading`}>加载失败</p>
-                    :
-                    !items.length
-                    ?
-                    <p className={`kernel-is-loading`}>Kernel Panic</p>
-                    :
-                    items.map((item, index)=>(<BlogItem key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />))
+                    items.map(item => (
+                        <BlogItem key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />
+                        )
+                    )
                 }
             </Fragment>
         );

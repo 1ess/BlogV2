@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import girl from '../girl.png'
 import 'react-toastify/dist/ReactToastify.css';
@@ -102,7 +102,7 @@ export default class Login extends Component {
                     </div>
                     <section className={`section is-reviews`}>
                         <div className="section-media"> 
-                            <img role="presentation" src={girl} /> 
+                            <img role="img" src={girl} alt="" /> 
                         </div>
                     </section>
                 </div>

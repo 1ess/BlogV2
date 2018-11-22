@@ -12,10 +12,16 @@ export default class YearIndex extends Component {
     
 
     handleClick = e => {
-        this.setState({
+        const {handleYearClick, currentIndex} = this.props;
+        document.title =  `❤️ ${e.target.text}`;
+        
+        if (currentIndex === e.target.text) {
+            return;
+        }
+        handleYearClick({
+            value: 0,
             index: e.target.text
         });
-        document.title =  `❤️ ${e.target.text}`;
     }
 
     render() {
