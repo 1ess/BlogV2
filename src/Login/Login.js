@@ -43,7 +43,8 @@ export default class Login extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `success-toast`
+                    className: `success-toast`,
+                    closeButton: false
                 });
                 handleLogin();
             }else {
@@ -51,7 +52,8 @@ export default class Login extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `error-toast`
+                    className: `error-toast`,
+                    closeButton: false
                 });
             }
         }).catch(function (error) {
@@ -59,7 +61,8 @@ export default class Login extends Component {
                 position: toast.POSITION.TOP_CENTER,
                 hideProgressBar: true,
                 draggable: true,
-                className: `error-toast`
+                className: `error-toast`,
+                closeButton: false
             });
         }).then(function () {
             if (self._isMounted) {

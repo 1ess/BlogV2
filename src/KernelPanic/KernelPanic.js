@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PanicItem from '../PanicItem/PanicItem';
 import Header from '../Header/Header';
 import Login from '../Login/Login'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
 import axios from 'axios';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -75,7 +75,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `error-toast`
+                    className: `error-toast`,
+                    closeButton: false
                 });
                 return;
             }
@@ -100,7 +101,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `success-toast`
+                    className: `success-toast`,
+                    closeButton: false
                 });
                 self.setState({
                     showMenu: false,
@@ -134,7 +136,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `error-toast`
+                    className: `error-toast`,
+                    closeButton: false
                 });
             }).then(function () {
                 self.setState({
@@ -165,7 +168,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `success-toast`
+                    className: `success-toast`,
+                    closeButton: false
                 });
                 self.setState({
                     isLoading: false,
@@ -195,7 +199,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `error-toast`
+                    className: `error-toast`,
+                    closeButton: false
                 });
                 tagRef.current.innerText = prevTag;
                 titleRef.current.innerText = prevTitle;
@@ -221,7 +226,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `success-toast`
+                    className: `success-toast`,
+                    closeButton: false
                 });
                 self.setState({
                     isLoading: false,
@@ -251,7 +257,8 @@ export default class KernelPanic extends Component {
                     position: toast.POSITION.TOP_CENTER,
                     hideProgressBar: true,
                     draggable: true,
-                    className: `error-toast`
+                    className: `error-toast`,
+                    closeButton: false
                 });
                 tagRef.current.innerText = prevTag;
                 titleRef.current.innerText = prevTitle;
@@ -308,7 +315,6 @@ export default class KernelPanic extends Component {
         
         return (                
             <div className={`app-container`}>
-                <ToastContainer />
                 <Header symbol={`❤️`} selectedIndex={2} />
                 {
                     !logined
@@ -426,6 +432,7 @@ export default class KernelPanic extends Component {
                         </div>                        
                     </div>
                 }
+                <ToastContainer transition={Zoom} />
             </div>
         );
     }

@@ -13738,10 +13738,30 @@ a strong {
   background: rgba(46, 204, 113, 1) !important;
   border-radius: 3px !important;
   text-align: center;
+  width: 200px;
 }
 
 .error-toast {
   background: rgba(231, 76, 60, 1) !important;
   border-radius: 3px !important;
   text-align: center;
+  width: 200px;
+}
+
+.Toastify__toast-container--top-center{
+  margin-left: -100px !important;
+}
+
+@media screen and (max-width:415px),
+print {
+  
+  .Toastify__toast-container--top-center{
+    margin-left: 0 !important;
+    left: calc((100vw - 200px)/2) !important;
+    padding: 8px 0 !important;
+  }
+
+  .success-toast, .error-toast {
+    margin-bottom: 8px !important;
+  }
 }
