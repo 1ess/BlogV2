@@ -69,11 +69,21 @@ export default class KernelPanic extends Component {
     handleClick = (e) => {
         
         if (this.state.showMenu) {
+            const { title, date, year, summary, tag } = this.state;
+            if(!title || !date || !year || !summary || !tag) {
+                toast.warn("😩 Type Full Field!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    hideProgressBar: true,
+                    draggable: true,
+                    className: `error-toast`
+                });
+                return;
+            }
+
             this.setState({
                 createButtonLoading: true
             })
             
-            const { title, date, year, summary, tag } = this.state;
             const self = this;
             axios({
                 method: 'post',
