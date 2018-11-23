@@ -10832,14 +10832,13 @@ print {
 
 .hero.is-small .hero-body {
   padding-bottom: 1.5rem;
-  padding-top: 1.5rem
+  padding-top: 1.5rem;
 }
 
 @media screen and (min-width:769px),
 print {
   .hero.is-medium .hero-body {
-      padding-bottom: 9rem;
-      padding-top: 9rem
+      padding-top: 5rem;
   }
 }
 
@@ -10847,7 +10846,7 @@ print {
 print {
   .hero.is-large .hero-body {
       padding-bottom: 18rem;
-      padding-top: 18rem
+      padding-top: 18rem;
   }
 }
 
@@ -10856,7 +10855,7 @@ print {
   -ms-flex-align: center;
   align-items: center;
   display: -ms-flexbox;
-  display: flex
+  display: flex;
 }
 
 .hero.is-halfheight .hero-body>.container,
@@ -10945,16 +10944,16 @@ print {
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding: 6rem 1.5rem
+  padding: 4rem 1.5rem
 }
 
 .section {
-  padding: 6rem 1.5rem
+  padding: 3rem 1.5rem
 }
 
 @media screen and (min-width:1024px) {
   .section.is-medium {
-      padding: 6rem 1.5rem
+      padding: 4rem 1.5rem
   }
 
   .section.is-large {
@@ -13079,6 +13078,10 @@ button:focus {
   }
 }
 
+.app-header {
+  min-height: 4rem;
+}
+
 .app-header .navbar {
   box-shadow: 0 1px 0 0 rgba(142, 81, 199, 0.05);
   transition-duration: 172ms;
@@ -13728,10 +13731,6 @@ a strong {
   text-align: center;
 }
 
-.kernel-panic {
-  padding-top: 6rem !important;
-}
-
 .success-toast {
   background: rgba(46, 204, 113, 1) !important;
   border-radius: 3px !important;
@@ -13767,4 +13766,32 @@ print {
 .full-container {
   width: 100%;
   align-items: center;
+}
+
+.girl-section {
+  padding: 6rem 1.5rem;
+  position: relative;
+}
+
+.girl-section.is-reviews .section-media {
+  position: absolute;
+  right: 5%;
+  bottom: -30px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.girl-section.is-reviews .section-media img {
+  display: block;
+  max-width: 200px;
+}
+
+@media screen and (max-width:768px) {
+  .girl-section.is-reviews .section-media {
+      display: none
+  }
+}
+
+.login-container {
+  padding-top: 250px;
 }

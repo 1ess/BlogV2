@@ -86,8 +86,7 @@ export default class Login extends Component {
         const { isLoading, symbol, value } = this.state;
         return (
             <div className={`hero`}>
-                <div className={`hero-body`}></div>
-                <div className={`hero-body`}>
+                <div className={`hero-body login-container`}>
                     <div className={`columns`}>
                         <div className={`column is-4 is-offset-4`}>
                             <div className={`field`}>
@@ -106,7 +105,7 @@ export default class Login extends Component {
                             </div>
                         </div>
                     </div>
-                    <section className={`section is-reviews`}>
+                    <section className={`is-reviews girl-section`}>
                         <div className="section-media"> 
                             <img role="img" src={girl} alt="" /> 
                         </div>
