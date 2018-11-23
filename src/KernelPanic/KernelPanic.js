@@ -12,9 +12,9 @@ import '../Blog.css';
 
 const InputControl = ({title, type=`text`, placeholder, value, handleChange}) => {
     return (
-        <div className={`columns full-container`}>
-            <div className={`column is-3 is-5-mobile`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
-            <div className={`column is-9 is-6-mobile`}><input className={`input is-medium`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
+        <div className={`columns full-container is-mobile`}>
+            <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
+            <div className={`column is-9`}><input className={`input is-medium`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
         </div>
     );
 }
