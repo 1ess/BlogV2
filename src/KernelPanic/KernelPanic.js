@@ -12,25 +12,17 @@ import '../Blog.css';
 
 const InputControl = ({title, type=`text`, placeholder, value, handleChange}) => {
     return (
-        <div className={`field row`}>
-            <div className={`control`}>
-                <div className={`columns`}>
-                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
-                    <div className={`column is-9`}><input className={`input is-medium`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
-                </div>
-            </div>
+        <div className={`columns full-container`}>
+            <div className={`column is-3 is-5-mobile`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
+            <div className={`column is-9 is-6-mobile`}><input className={`input is-medium`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
         </div>
     );
 }
 
 const TextAreaControl = ({title, type=`text`, placeholder, value, handleChange}) => (
-    <div className={`field row`}>
-        <div className={`control`}>
-            <div className={`columns`}>
-                <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
-                <div className={`column is-9`}><textarea className={`textarea`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
-            </div>
-        </div>
+    <div className={`columns full-container is-mobile`}>
+        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
+        <div className={`column is-9`}><textarea className={`textarea`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
     </div>
 );
 
@@ -77,13 +69,25 @@ const MenuListContainer = ({
         {
             showMenu
             ?
-            <div className={`column is-4 is-offset-4`}>
+            <div className={`column is-8 is-offset-2`}>
                 <div className={`rows`}>
-                    <InputControl title={`#Tag`} type={`tel`} placeholder={`type Tag`} value={tag} handleChange={handleTagChange} />
-                    <InputControl title={`#Ttitle`} placeholder={`type Ttitle`} value={title} handleChange={handleTitleChange} />
-                    <InputControl title={`#Year`} placeholder={`type Year`} value={year} handleChange={handleYearChange} />
-                    <InputControl title={`#Date`} placeholder={`type Date`} value={date} handleChange={handleDateChange} />
-                    <TextAreaControl title={`#Summary`} placeholder={`type Summary`} value={summary} handleChange={handleSummaryChange} />
+                    <div className={`storybuilder`}>
+                        <div className={`story-item`}>
+                            <InputControl title={`#Tag`} type={`tel`} placeholder={`type Tag`} value={tag} handleChange={handleTagChange} />
+                        </div>
+                        <div className={`story-item`}>
+                            <InputControl title={`#Ttitle`} placeholder={`type Ttitle`} value={title} handleChange={handleTitleChange} />
+                        </div>
+                        <div className={`story-item`}>
+                            <InputControl title={`#Year`} placeholder={`type Year`} value={year} handleChange={handleYearChange} />
+                        </div>
+                        <div className={`story-item`}>
+                            <InputControl title={`#Date`} placeholder={`type Date`} value={date} handleChange={handleDateChange} />
+                        </div>
+                        <div className={`story-item`}>
+                            <TextAreaControl title={`#Summary`} placeholder={`type Summary`} value={summary} handleChange={handleSummaryChange} />
+                        </div>
+                    </div>
                 </div>
             </div>
             :
@@ -106,10 +110,10 @@ const MenuButtonContainer = ({
             isLoading 
             || 
             <Fragment>
-                <div className={`column is-2 is-offset-4`} style={showMenu ? {} : {display: `none`}}>
+                <div className={`column is-4 is-offset-2`} style={showMenu ? {} : {display: `none`}}>
                     <button onClick={handleCancelClick} className={`button is-light`} ><span className ="emoji" role ="img" aria-label="heart">{cancelSymbol}</span>Cancel.</button>
                 </div>
-                <div className={(`column is-2 ` + (showMenu ? ``: `is-offset-5`)).trim()}>
+                <div className={(`column is-4 ` + (showMenu ? ``: `is-offset-4`)).trim()}>
                     <button onClick={handleClick} className={(`button is-warning ` + ((showMenu && createButtonLoading) ? `is-loading` : ``)).trim()} ><span className ="emoji" role ="img" aria-label="heart">{symbol}</span> 
                     {
                         showMenu ? `Ensure`: `Create`

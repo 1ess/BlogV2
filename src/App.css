@@ -12903,7 +12903,7 @@ button:focus {
 
 .storybuilder {
   position: relative;
-  max-width: 400px;
+  /* max-width: 400px; */
   padding-left: 4rem
 }
 
@@ -13652,7 +13652,7 @@ hr {
   color: #463853
 }
 
-@media screen and (min-width:769px),
+@media screen and (max-width:769px),
 print {
   .special-body {
       padding-bottom: 6rem;
@@ -13662,6 +13662,10 @@ print {
   .github-button {
       text-align: right
   }
+}
+
+.tag-title {
+  font-size: 1.4rem;
 }
 
 .special-body {
@@ -13710,7 +13714,6 @@ a strong {
 }
 
 .panic-subtitle {
-  font-size: 1.1rem;
   margin-top: 0.3rem !important;
   margin-bottom: 0.5rem !important;
 }
@@ -13727,11 +13730,6 @@ a strong {
 
 .kernel-panic {
   padding-top: 6rem !important;
-}
-
-.tag-title {
-  /* font-weight: bold; */
-  font-size: 1.4rem;
 }
 
 .success-toast {
@@ -13764,4 +13762,9 @@ print {
   .success-toast, .error-toast {
     margin-bottom: 8px !important;
   }
+}
+
+.full-container {
+  width: 100%;
+  align-items: center;
 }
