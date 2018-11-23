@@ -4,6 +4,15 @@ import Blog2019 from '../2019/2019';
 
 export default class BlogList extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false,
+            error: false,
+            empty: false
+        };
+    }
+
     handleAlphaChange = ({value}) => {
         const {handleAlphaChange} = this.props;
         handleAlphaChange(value);
@@ -13,14 +22,13 @@ export default class BlogList extends Component {
         const {index, alpha} = this.props;
         return (
             <div className={`column is-9 is-10-widescreen`}>
-            {
-                (
+            {(
                     <div className={`columns is-multiline shuffle blog-alpha`} style={{opacity: alpha}} id={`grid`}>
                     { 
                         index === `2018`? 
-                        <Blog2018 handleAlphaChange={this.handleAlphaChange}/>
+                        <Blog2018 handleAlphaChange={this.handleAlphaChange} />
                         :index === `2019`?
-                        <Blog2019 handleAlphaChange={this.handleAlphaChange}/>
+                        <Blog2019 handleAlphaChange={this.handleAlphaChange} />
                         :null
                     }
                     </div>

@@ -76,7 +76,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `error-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 return;
             }
@@ -102,7 +103,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `success-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 self.setState({
                     showMenu: false,
@@ -137,7 +139,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `error-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
             }).then(function () {
                 self.setState({
@@ -169,7 +172,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `success-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 self.setState({
                     isLoading: false,
@@ -200,7 +204,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `error-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 tagRef.current.innerText = prevTag;
                 titleRef.current.innerText = prevTitle;
@@ -227,7 +232,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `success-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 self.setState({
                     isLoading: false,
@@ -258,7 +264,8 @@ export default class KernelPanic extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `error-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 tagRef.current.innerText = prevTag;
                 titleRef.current.innerText = prevTitle;

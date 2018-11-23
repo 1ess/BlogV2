@@ -44,7 +44,8 @@ export default class Login extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `success-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
                 handleLogin();
             }else {
@@ -53,7 +54,8 @@ export default class Login extends Component {
                     hideProgressBar: true,
                     draggable: true,
                     className: `error-toast`,
-                    closeButton: false
+                    closeButton: false,
+                    autoClose: 2000
                 });
             }
         }).catch(function (error) {
@@ -62,7 +64,8 @@ export default class Login extends Component {
                 hideProgressBar: true,
                 draggable: true,
                 className: `error-toast`,
-                closeButton: false
+                closeButton: false,
+                autoClose: 2000
             });
         }).then(function () {
             if (self._isMounted) {

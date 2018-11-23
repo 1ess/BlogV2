@@ -5,29 +5,39 @@ import '../App.css';
 import '../Blog.css';
 
 export default class Blog2018 extends Component {
-
+    _isMounted = false;
     constructor(props) {
         super(props);
+        this._isMounted = true;
         this.state = {
             items: []
         };
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     componentDidMount() {
+        this._isMounted = true;
         const self = this;
         const {handleAlphaChange} = this.props;
+        
         axios({
             method: 'get',
             url: 'https://api.godzzzzz.club/api/blogs/year/2018',
             data: {}
         }).then(function (response) {
-            self.setState({
-                items: response.data
-            });
-            handleAlphaChange(1);
+            if (self._isMounted) {
+                self.setState({
+                    items: response.data
+                });
+                handleAlphaChange(1);
+            }
         }).catch(function (error) {
             
         }).then(function () {
+            
         });
     }
 
