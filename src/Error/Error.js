@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Error.css'
-import error from '../404.gif'
+import '../Error.css';
+import error from '../404.gif';
 export default class Error extends React.Component {
     componentDidMount() {
         document.title = "Oops! Page Not Found";

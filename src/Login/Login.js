@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import girl from '../girl.png'
+import girl from '../girl.png';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class Login extends Component {

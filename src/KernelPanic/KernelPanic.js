@@ -1,13 +1,170 @@
 import React, { Component, Fragment } from 'react';
 import PanicItem from '../PanicItem/PanicItem';
 import Header from '../Header/Header';
-import Login from '../Login/Login'
+import Login from '../Login/Login';
+import KernelPanicTitle from '../KernelPanicTitle/KernelPanicTitle';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 import axios from 'axios';
 
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 import '../Blog.css';
+
+const InputControl = ({title, type=`text`, placeholder, value, handleChange}) => {
+    return (
+        <div className={`field row`}>
+            <div className={`control`}>
+                <div className={`columns`}>
+                    <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
+                    <div className={`column is-9`}><input className={`input is-medium`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+const TextAreaControl = ({title, type=`text`, placeholder, value, handleChange}) => (
+    <div className={`field row`}>
+        <div className={`control`}>
+            <div className={`columns`}>
+                <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>{title}</label></div>
+                <div className={`column is-9`}><textarea className={`textarea`} type={type} placeholder={placeholder} value={value} onChange={handleChange}/></div>
+            </div>
+        </div>
+    </div>
+);
+
+const PanicContainer = ({isLoading, error, items, handleItemClick}) => (
+    <div className={`columns has-equal-heights reverse`}>
+        <div className={`column is-8 is-offset-2`}>
+            <div className={`section-header`}>
+                {
+                    isLoading 
+                    ? 
+                    <p className={`has-text-centered kernel-is-loading`}>Loading ...</p>
+                    :
+                    error 
+                    ?
+                    <p className={`has-text-centered kernel-is-loading`}>Kernel Panic</p>
+                    :
+                    <ul className={`numbered-list`}>
+                        {
+                            items.map((item) => (
+                                <PanicItem key={item.id} id={item.id} tag={item.tag} prevTag={item.tag} title={item.title} prevTitle={item.title} date={item.date} prevDate={item.date} summary={item.summary} prevSummary={item.summary} year={item.year} prevYear={item.year} handleItemClick={handleItemClick}/>
+                            ))
+                        }
+                    </ul>
+                }
+            </div>
+        </div>                            
+    </div>
+);
+
+const MenuListContainer = ({
+                            showMenu, 
+                            tag, 
+                            title, 
+                            year, 
+                            date, 
+                            summary, 
+                            handleTagChange, 
+                            handleTitleChange, 
+                            handleYearChange, 
+                            handleDateChange, 
+                            handleSummaryChange
+                            }) => (
+    <div className={`columns has-equal-heights reverse`}>
+        {
+            showMenu
+            ?
+            <div className={`column is-4 is-offset-4`}>
+                <div className={`rows`}>
+                    <InputControl title={`#Tag`} type={`tel`} placeholder={`type Tag`} value={tag} handleChange={handleTagChange} />
+                    <InputControl title={`#Ttitle`} placeholder={`type Ttitle`} value={title} handleChange={handleTitleChange} />
+                    <InputControl title={`#Year`} placeholder={`type Year`} value={year} handleChange={handleYearChange} />
+                    <InputControl title={`#Date`} placeholder={`type Date`} value={date} handleChange={handleDateChange} />
+                    <TextAreaControl title={`#Summary`} placeholder={`type Summary`} value={summary} handleChange={handleSummaryChange} />
+                </div>
+            </div>
+            :
+            null
+        }
+    </div>
+)
+
+const MenuButtonContainer = ({
+                             isLoading, 
+                             showMenu, 
+                             handleCancelClick, 
+                             handleClick, 
+                             createButtonLoading, 
+                             cancelSymbol, 
+                             symbol
+                             }) => (
+    <div className={`columns has-equal-heights reverse`}>
+        {
+            isLoading 
+            || 
+            <Fragment>
+                <div className={`column is-2 is-offset-4`} style={showMenu ? {} : {display: `none`}}>
+                    <button onClick={handleCancelClick} className={`button is-light`} ><span className ="emoji" role ="img" aria-label="heart">{cancelSymbol}</span>Cancel.</button>
+                </div>
+                <div className={(`column is-2 ` + (showMenu ? ``: `is-offset-5`)).trim()}>
+                    <button onClick={handleClick} className={(`button is-warning ` + ((showMenu && createButtonLoading) ? `is-loading` : ``)).trim()} ><span className ="emoji" role ="img" aria-label="heart">{symbol}</span> 
+                    {
+                        showMenu ? `Ensure`: `Create`
+                    }
+                    .</button>
+                </div>
+            </Fragment>
+        }
+    </div>
+)
+
+const MenuContainer = ({ 
+                        showMenu, 
+                        tag, 
+                        title, 
+                        year, 
+                        date, 
+                        summary, 
+                        handleTagChange, 
+                        handleTitleChange, 
+                        handleYearChange, 
+                        handleDateChange, 
+                        handleSummaryChange,
+                        isLoading, 
+                        handleCancelClick, 
+                        handleClick, 
+                        createButtonLoading, 
+                        cancelSymbol, 
+                        symbol
+                        }) => (
+    <Fragment>
+        <MenuListContainer  
+        showMenu={showMenu} 
+        tag={tag} 
+        title={title} 
+        date={date} 
+        year={year} 
+        summary={summary} 
+        handleTagChange={handleTagChange} 
+        handleTitleChange={handleTitleChange} 
+        handleDateChange={handleDateChange} 
+        handleYearChange={handleYearChange} 
+        handleSummaryChange={handleSummaryChange} 
+        />
+        <MenuButtonContainer 
+        isLoading={isLoading} 
+        showMenu={showMenu} 
+        createButtonLoading={createButtonLoading} 
+        cancelSymbol={cancelSymbol} 
+        symbol={symbol}
+        handleCancelClick={handleCancelClick} 
+        handleClick={handleClick} 
+        />
+    </Fragment>
+)
 
 export default class KernelPanic extends Component {
     constructor(props) {
@@ -331,110 +488,32 @@ export default class KernelPanic extends Component {
                     <div className={`app-content has-background`}>
                         <div className={`hero is-medium`}>
                             <div className={`hero-body kernel-panic`}>
-                                <div className={`columns has-equal-heights reverse`}>
-                                    <div className={`column is-8 is-offset-2`}>
-                                        <div className={`section-header`}>
-                                            <h2 className={`title has-text-centered is-spaced`}> 
-                                                Content Management 
-                                                <span className={`spacer is-horizontal is-05`}> </span>
-                                                <span className={`tag is-warning is-uppercase`}>Beta</span>
-                                            </h2>
-                                        </div>
-                                    </div>                            
-                                </div>
-                                <div className={`columns has-equal-heights reverse`}>
-                                {
-                                    showMenu
-                                    ?
-                                    <div className={`column is-4 is-offset-4`}>
-                                        <div className={`rows`}>
-                                            <div className={`field row`}>
-                                                <div className={`control`}>
-                                                    <div className={`columns`}>
-                                                        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>#Tag</label></div>
-                                                        <div className={`column is-9`}><input className={`input is-medium`} type="tel" placeholder="type Tag" value={tag} onChange={this.handleTagChange}/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className={`field row`}>
-                                                <div className={`control`}>
-                                                    <div className={`columns`}>
-                                                        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>#Ttitle</label></div>
-                                                        <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Ttitle" value={title} onChange={this.handleTitleChange}/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className={`field row`}>
-                                                <div className={`control`}>
-                                                    <div className={`columns`}>
-                                                        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>#Year</label></div>
-                                                        <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Year" value={year} onChange={this.handleYearChange}/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className={`field row`}>
-                                                <div className={`control`}>
-                                                    <div className={`columns`}>
-                                                        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>#Date</label></div>
-                                                        <div className={`column is-9`}><input className={`input is-medium`} type="text" placeholder="type Date" value={date} onChange={this.handleDateChange}/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className={`field row`}>
-                                                <div className={`control`}>
-                                                    <div className={`columns`}>
-                                                        <div className={`column is-3`}><label className={`subtitle panic-subtitle tag-title`}>#Summary</label></div>
-                                                        <div className={`column is-9`}><textarea className={`textarea`} type="text" placeholder="type Summary" value={summary} onChange={this.handleSummaryChange}/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    :
-                                    null
-                                }
-                                </div>
-                                <div className={`columns has-equal-heights reverse`}>
-                                    {
-                                        isLoading 
-                                        || 
-                                        <Fragment>
-                                            <div className={`column is-2 is-offset-4`} style={showMenu ? {} : {display: `none`}}>
-                                                <button onClick={this.handleCancelClick} className={`button is-light`} ><span className ="emoji" role ="img" aria-label="heart">{cancelSymbol}</span>Cancel.</button>
-                                            </div>
-                                            <div className={(`column is-2 ` + (showMenu ? ``: `is-offset-5`)).trim()}>
-                                                <button onClick={this.handleClick} className={(`button is-warning ` + ((showMenu && createButtonLoading) ? `is-loading` : ``)).trim()} ><span className ="emoji" role ="img" aria-label="heart">{symbol}</span> 
-                                                {
-                                                    showMenu ? `Ensure`: `Create`
-                                                }
-                                                .</button>
-                                            </div>
-                                        </Fragment>
-                                    }
-                                </div>
-                                <div className={`columns has-equal-heights reverse`}>
-                                    <div className={`column is-8 is-offset-2`}>
-                                        <div className={`section-header`}>
-                                            {
-                                                isLoading 
-                                                ? 
-                                                <p className={`has-text-centered kernel-is-loading`}>Loading ...</p>
-                                                :
-                                                error 
-                                                ?
-                                                <p className={`has-text-centered kernel-is-loading`}>Kernel Panic</p>
-                                                :
-                                                <ul className={`numbered-list`}>
-                                                    {
-                                                        items.map((item) => (
-                                                            <PanicItem key={item.id} id={item.id} tag={item.tag} prevTag={item.tag} title={item.title} prevTitle={item.title} date={item.date} prevDate={item.date} summary={item.summary} prevSummary={item.summary} year={item.year} prevYear={item.year} handleItemClick={this.handleItemClick}/>
-                                                        ))
-                                                    }
-                                                </ul>
-                                            }
-                                        </div>
-                                    </div>                            
-                                </div>
+                                <KernelPanicTitle />
+                                <MenuContainer 
+                                showMenu={showMenu} 
+                                tag={tag} 
+                                title={title} 
+                                date={date} 
+                                year={year} 
+                                summary={summary} 
+                                handleTagChange={this.handleTagChange} 
+                                handleTitleChange={this.handleTitleChange} 
+                                handleDateChange={this.handleDateChange} 
+                                handleYearChange={this.handleYearChange} 
+                                handleSummaryChange={this.handleSummaryChange}
+                                isLoading={isLoading} 
+                                createButtonLoading={createButtonLoading}
+                                cancelSymbol={cancelSymbol} 
+                                symbol={symbol}
+                                handleCancelClick={this.handleCancelClick} 
+                                handleClick={this.handleClick} 
+                                />
+                                <PanicContainer 
+                                isLoading={isLoading} 
+                                error={error} 
+                                items={items} 
+                                handleItemClick={this.handleItemClick} 
+                                />
                             </div>
                         </div>                        
                     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import BlogContainer from '../BlogContainer/BlogContainer'
-import Footer from '../Footer/Footer'
+import BlogContainer from '../BlogContainer/BlogContainer';
+import Footer from '../Footer/Footer';
 
 export default class Blog extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import footer from '../footer.png'
+import footer from '../footer.png';
 import '../Blog.css';
 
 export default class Blog extends Component {
