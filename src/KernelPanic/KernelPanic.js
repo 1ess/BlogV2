@@ -196,6 +196,7 @@ export default class KernelPanic extends Component {
 
     componentDidMount() {
         document.title = " ❤️ Kernel Panic";
+        this.node.scrollIntoView();
         const self = this;
         axios({
             method: 'get',
@@ -482,7 +483,7 @@ export default class KernelPanic extends Component {
               } = this.state;
         
         return (                
-            <div className={`app-container`}>
+            <div ref={node => this.node = node} className={`app-container`}>
                 <Header symbol={`❤️`} selectedIndex={2} />
                 {
                     !logined

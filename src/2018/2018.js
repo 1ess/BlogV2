@@ -43,11 +43,12 @@ export default class Blog2018 extends Component {
 
     render() {
         const { items } = this.state;
+        const { index } = this.props;
         return (
             <Fragment>
                 {
                     items.map(item => (
-                        <BlogItem key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />
+                        <BlogItem index={index} key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />
                         )
                     )
                 }

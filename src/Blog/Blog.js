@@ -5,27 +5,32 @@ import Footer from '../Footer/Footer';
 
 export default class Blog extends Component {
 
-  constructor(props){
+constructor(props){
     super(props);
-    this.state = {
-      	index: this.props.match.params.index
-    }
-  }
+		this.state = {
+			index: this.props.match.params.index
+		}
+	}
 
-  handleYearChange = (index) => {
-    this.setState({
-    	index: index
-    })
-  }
+	componentDidMount = () => {
+		this.node.scrollIntoView();
+	}
+  
 
-  render() {
-    return (
-		<div className={`app-container`}>
-			<Header symbol={`❤️`} selectedIndex={1} />
-			<BlogContainer index={this.state.index} handleYearChange={this.handleYearChange}/>
-			<Footer />
-		</div>
-    );
-  }
+	handleYearChange = (index) => {
+		this.setState({
+			index: index
+		})
+	}
+
+	render() {
+		return (
+			<div ref={node => this.node = node} className={`app-container`}>
+				<Header symbol={`❤️`} selectedIndex={1} />
+				<BlogContainer index={this.state.index} handleYearChange={this.handleYearChange}/>
+				<Footer />
+			</div>
+		);
+	}
 }
 

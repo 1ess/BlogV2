@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import LazyLoad from "vanilla-lazyload";
+import {Link} from 'react-router-dom';
 import '../App.css';
 import '../Blog.css';
 
 const CardHeader = ({number}) => (
-    <div className="card-header bg-gray" href={`https://github.com/GodzzZZZ/GodzzZZZ.github.io/issues/${number}`}>
+    <div className="card-header bg-gray">
         <div className="card-image lazy" data-bg={`url(../blogImg/Blog${number}.jpg)`}></div>
     </div>
 )
 
-const CardBody = ({number, title, date_time, summary}) => (
+const CardBody = ({index, number, title, date_time, summary}) => (
     <div className="card-body">
-        <a href={`https://github.com/GodzzZZZ/GodzzZZZ.github.io/issues/${number}`}>
+        <Link to={`/blog/${index}/${number}`}>
             <div className="card-title"> {title} </div>
-        </a>
+        </Link>
         <div className="card-meta"> {date_time} </div>
         <div className="card-description">
             <p> {summary} </p>
@@ -21,17 +22,17 @@ const CardBody = ({number, title, date_time, summary}) => (
     </div>
 )
 
-const Card = ({number, title, date_time, summary, className}) => (
+const Card = ({index, number, title, date_time, summary}) => (
     <div className={`card is-storyworld`}>
         <CardHeader number={number} />
-        <CardBody number={number} title={title} date_time={date_time} summary={summary} />
-        <CardFooter number={number} />
+        <CardBody index={index} number={number} title={title} date_time={date_time} summary={summary} />
+        <CardFooter index={index} number={number} />
     </div>
 )
 
-const CardFooter = ({number}) => (
+const CardFooter = ({index, number}) => (
     <div className="card-footer">
-        <a className="button is-primary is-outlined" href={`https://github.com/GodzzZZZ/GodzzZZZ.github.io/issues/${number}`}> Read now </a>
+        <Link className="button is-primary is-outlined" to={`/blog/${index}/${number}`}> Read now </Link>
     </div>
 )
 
@@ -43,10 +44,10 @@ export default class BlogItem extends Component {
     }
 
     render() {
-        const { number , title, date_time, summary } = this.props;
+        const { index, number, title, date_time, summary } = this.props;
         return (
             <div className="column is-6 is-4-widescreen is-flex shuffle-item shuffle-item--visible">
-                <Card number={number} title={title} date_time={date_time} summary={summary} />
+                <Card index={index} number={number} title={title} date_time={date_time} summary={summary} />
             </div>
         );
     }

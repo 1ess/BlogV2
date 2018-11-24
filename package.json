@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "highlight.js": "^9.13.1",
+    "marked": "^0.5.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-markdown": "^4.0.3",

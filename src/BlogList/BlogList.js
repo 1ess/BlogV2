@@ -26,9 +26,9 @@ export default class BlogList extends Component {
                     <div className={`columns is-multiline shuffle blog-alpha`} style={{opacity: alpha}} id={`grid`}>
                     { 
                         index === `2018`? 
-                        <Blog2018 handleAlphaChange={this.handleAlphaChange} />
+                        <Blog2018 index={index} handleAlphaChange={this.handleAlphaChange} />
                         :index === `2019`?
-                        <Blog2019 handleAlphaChange={this.handleAlphaChange} />
+                        <Blog2019 index={index} handleAlphaChange={this.handleAlphaChange} />
                         :null
                     }
                     </div>

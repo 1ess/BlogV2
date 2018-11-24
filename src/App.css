@@ -13795,3 +13795,8 @@ print {
 .login-container {
   padding-top: 250px;
 }
+
+.blog-link {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
