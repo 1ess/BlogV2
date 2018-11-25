@@ -13655,16 +13655,24 @@ hr {
   color: #463853
 }
 
-@media screen and (max-width:769px),
+@media screen and (max-width:768px),
 print {
   .special-body {
       padding-bottom: 6rem;
       padding-top: 3rem
   }
-
   .github-button {
-      text-align: right
-  }
+    text-align: left;
+}
+  
+}
+
+@media screen and (min-width:769px),
+print {
+  .github-button {
+    text-align: right;
+}
+  
 }
 
 .tag-title {
@@ -13725,8 +13733,6 @@ a strong {
   color: #dedede;
   font-size: 2rem;
   font-weight: 500;
-  line-height: calc(100vh - 300px);
-  height: calc(100vh - 300px);
   width: 100%;
   text-align: center;
 }
@@ -13800,3 +13806,11 @@ print {
   font-weight: 500;
   font-size: 1.5rem;
 }
+
+.loading-container {
+  height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

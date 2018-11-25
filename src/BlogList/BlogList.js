@@ -1,35 +1,24 @@
-import React, { Component } from 'react';
-import Blog2018 from '../2018/2018';
-import Blog2019 from '../2019/2019';
+import React, { Component, Fragment } from 'react';
+import BlogItem from '../BlogItem/BlogItem';
 
 export default class BlogList extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: false,
-            error: false,
-            empty: false
-        };
-    }
-
-    handleAlphaChange = ({value}) => {
-        const {handleAlphaChange} = this.props;
-        handleAlphaChange(value);
-    }
-
     render() {
-        const {index, alpha} = this.props;
+        const {year, items} = this.props;
         return (
             <div className={`column is-9 is-10-widescreen`}>
-            {(
-                    <div className={`columns is-multiline shuffle blog-alpha`} style={{opacity: alpha}} id={`grid`}>
+            {
+                (
+                    <div className={`columns is-multiline shuffle blog-alpha`} id={`grid`}>
                     { 
-                        index === `2018`? 
-                        <Blog2018 index={index} handleAlphaChange={this.handleAlphaChange} />
-                        :index === `2019`?
-                        <Blog2019 index={index} handleAlphaChange={this.handleAlphaChange} />
-                        :null
+                        <Fragment>
+                        {
+                            items.map(item => (
+                                <BlogItem year={year} key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />
+                                )
+                            )
+                        }
+                        </Fragment>
                     }
                     </div>
                 )

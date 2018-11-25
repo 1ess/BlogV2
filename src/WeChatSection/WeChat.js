@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+
 import scan from '../scan-qrcode.png';
 import wechat from '../wechat.jpg';
 

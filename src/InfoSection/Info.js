@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
+
 import messageImg from '../message-img.jpg';
 
 const Introduction = ({className = '', introduction}) => (

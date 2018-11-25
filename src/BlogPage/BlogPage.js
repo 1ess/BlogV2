@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Header from '../Header/Header';
+import Loading from '../Loading/Loading';
+
 import marked from 'marked';
 import axios from 'axios';
 import hljs from 'highlight.js';
@@ -36,8 +38,8 @@ const BlogContent = ({title, content}) => {
     )
 }
 
-const BlogContainer = ({year, headerTitle, title, content}) => (
-    <main className="app-content has-background">
+const BlogContainer = ({year, headerTitle, title, content, zero}) => (
+    <main className={`app-content has-background`}>
         <section className={`section is-storyworlds has-background is-medium  special-container`}>
             <div className="container">
                 <div className={`columns is-centered`}>
@@ -58,7 +60,9 @@ export default class BlogPage extends Component {
         this._isMounted = true;
         this.state = {
             title: ``,
-            content: ``
+            content: ``,
+            isloading: true,
+            error: false
         };
     }
 
@@ -69,35 +73,51 @@ export default class BlogPage extends Component {
     componentDidMount() {
         this._isMounted = true;
         document.title = " ❤️ Blog";
+        const {tag} = this.props.match.params;
         this.node.scrollIntoView();
         const self = this;
         axios({
             method: 'get',
-            url: `https://api.godzzzzz.club/api/detail/${this.props.match.params.tag}`,
+            url: `https://api.godzzzzz.club/api/detail/${tag}`,
             data: {}
         }).then(function (response) {
-            console.log(response.data.detail.content);
+            const detail = response.data.detail;
             if (self._isMounted) {
-                document.title = ` ❤️ ${response.data.detail.title}`;
+                document.title = ` ❤️ ${detail.title}`;
                 self.setState({
-                    title: response.data.detail.title,
-                    content: response.data.detail.content
+                    title: detail.title,
+                    content: detail.content
                 });
             }
         }).catch(function (error) {
-            
+            self.setState({
+                error: true
+            });
         }).then(function () {
-            
+            self.setState({
+                isloading: false                
+            });
         });
     }
     
 
     render() {
-        const {title, content} = this.state;
+        const {title, content, isloading, error} = this.state;
+        const {year, tag} = this.props.match.params;
         return (
             <div ref={node => this.node = node} className={`app-container`}>
                 <Header symbol={`❤️`} selectedIndex={1} />
-                <BlogContainer year={`${this.props.match.params.index}`} headerTitle={`${this.props.match.params.tag}`} title={title} content={content} />
+                {
+                    isloading
+                    ?
+                    <Loading content={`Loading...`} />
+                    :
+                    error
+                    ?
+                    <Loading content={`Panic.`} />
+                    :
+                    <BlogContainer year={`${year}`} headerTitle={`${tag}`} title={title} content={content} />
+                }
             </div>
         );
     }

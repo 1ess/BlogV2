@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import '../App.css';
 
 const ContributionItem = ({ symbol, slogan, project_name, project_link }) => (

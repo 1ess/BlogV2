@@ -10,9 +10,9 @@ const CardHeader = ({number}) => (
     </div>
 )
 
-const CardBody = ({index, number, title, date_time, summary}) => (
+const CardBody = ({year, number, title, date_time, summary}) => (
     <div className="card-body">
-        <Link to={`/blog/${index}/${number}`}>
+        <Link to={`/blog/${year}/${number}`}>
             <div className="card-title"> {title} </div>
         </Link>
         <div className="card-meta"> {date_time} </div>
@@ -22,17 +22,17 @@ const CardBody = ({index, number, title, date_time, summary}) => (
     </div>
 )
 
-const Card = ({index, number, title, date_time, summary}) => (
-    <div className={`card is-storyworld`}>
-        <CardHeader number={number} />
-        <CardBody index={index} number={number} title={title} date_time={date_time} summary={summary} />
-        <CardFooter index={index} number={number} />
+const CardFooter = ({year, number}) => (
+    <div className="card-footer">
+        <Link className="button is-primary is-outlined" to={`/blog/${year}/${number}`}> Read now </Link>
     </div>
 )
 
-const CardFooter = ({index, number}) => (
-    <div className="card-footer">
-        <Link className="button is-primary is-outlined" to={`/blog/${index}/${number}`}> Read now </Link>
+const Card = ({year, number, title, date_time, summary}) => (
+    <div className={`card is-storyworld`}>
+        <CardHeader number={number} />
+        <CardBody year={year} number={number} title={title} date_time={date_time} summary={summary} />
+        <CardFooter year={year} number={number} />
     </div>
 )
 
@@ -44,10 +44,10 @@ export default class BlogItem extends Component {
     }
 
     render() {
-        const { index, number, title, date_time, summary } = this.props;
+        const { year, number, title, date_time, summary } = this.props;
         return (
             <div className="column is-6 is-4-widescreen is-flex shuffle-item shuffle-item--visible">
-                <Card index={index} number={number} title={title} date_time={date_time} summary={summary} />
+                <Card year={year} number={number} title={title} date_time={date_time} summary={summary} />
             </div>
         );
     }

@@ -24,5 +24,13 @@ print {
 }
  
 .blog-alpha {
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-in;
+}
+
+.detail-alpha-zero {
+    opacity: 0;
+}
+
+.detail-alpha-one {
+    opacity: 1;
 }

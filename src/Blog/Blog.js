@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+
 import Header from '../Header/Header';
 import BlogContainer from '../BlogContainer/BlogContainer';
 import Footer from '../Footer/Footer';
 
 export default class Blog extends Component {
 
-constructor(props){
-    super(props);
+	constructor(props){
+		super(props);
+		const {year} = this.props.match.params;
 		this.state = {
-			index: this.props.match.params.index
-		}
+			year
+		};
 	}
 
 	componentDidMount = () => {
@@ -17,17 +19,18 @@ constructor(props){
 	}
   
 
-	handleYearChange = (index) => {
+	handleYearChange = (year) => {
 		this.setState({
-			index: index
-		})
+			year
+		});
 	}
 
 	render() {
+		const {year} = this.state;
 		return (
 			<div ref={node => this.node = node} className={`app-container`}>
 				<Header symbol={`❤️`} selectedIndex={1} />
-				<BlogContainer index={this.state.index} handleYearChange={this.handleYearChange}/>
+				<BlogContainer year={year} handleYearChange={this.handleYearChange}/>
 				<Footer />
 			</div>
 		);
