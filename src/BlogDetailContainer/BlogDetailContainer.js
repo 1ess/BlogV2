@@ -2,15 +2,17 @@ import React, { Component, Fragment } from 'react';
 
 import marked from 'marked';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
+
+import 'highlight.js/styles/ocean.css';
 
 const BlogContent = ({title, content}) => {
     var markdown = marked(content, {
         gfm: true,
         tables: true,
         breaks: true,
-        highlight: function(code) {
-            return hljs.highlightAuto(code).value;
+        highlight: function(code, lang) {
+            const highlighted = hljs.highlight(lang, code).value;
+            return `${highlighted}`;
           },
     });
     return (

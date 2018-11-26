@@ -156,8 +156,8 @@ a:hover {
 }
 
 code {
-  background-color: #fbfbfd;
-  color: #ff3860;
+  /* background-color: #fbfbfd; */
+  /* color: #ff3860; */
   font-size: .875em;
   font-weight: normal;
   padding: .25em .5em .25em
@@ -203,12 +203,11 @@ pre {
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
   white-space: pre;
-  word-wrap: normal
+  word-wrap: normal;
+  background:  #2b303b;
 }
 
 pre code {
-  background-color: transparent;
-  color: currentColor;
   font-size: 1em;
   padding: 0
 }

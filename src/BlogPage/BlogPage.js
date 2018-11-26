@@ -6,7 +6,6 @@ import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
 import BlogDetailContainer from '../BlogDetailContainer/BlogDetailContainer';
 
-
 const BlogHeader = ({year, headerTitle}) => (
     <nav className={`breadcrumb is-medium`}> 
         <ul> 
