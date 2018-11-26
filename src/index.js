@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from './App';
 import Blog from './Blog/Blog';
 import BlogPage from './BlogPage/BlogPage';
-import KernelPanic from './KernelPanic/KernelPanic';
 import ErrorPage from './Error/Error';
 
 import './index.css';
@@ -15,8 +14,7 @@ ReactDOM.render((
         <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/blog/:year(2018|2019)" component={Blog} />
-            <Route path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
-            <Route path="/kernelpanic" component={KernelPanic} />
+            <Route exact path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
             <Route component={ErrorPage} />
         </Switch>
     </Router>

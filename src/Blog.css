@@ -1,5 +1,5 @@
 .special-container {
-    min-height: 100vh
+    min-height: calc(100vh - 4rem);
 }
 
 #blog-footer {
@@ -29,4 +29,26 @@ print {
 
 .detail-alpha-zero {
     opacity: 0;
+}
+
+
+.content-full-height {
+    height: calc(100vh - 4rem - 4rem - 4rem);
+    max-height: calc(100vh - 4rem - 4rem - 4rem);
+    min-height: calc(100vh - 4rem - 4rem - 4rem);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+.content-full-height-textarea {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.markdown-content {
+    background: #2b303b;
 }

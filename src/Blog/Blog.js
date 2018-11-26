@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Header from '../Header/Header';
 import BlogContainer from '../BlogContainer/BlogContainer';
-import Footer from '../Footer/Footer';
 
 export default class Blog extends Component {
 
@@ -31,7 +30,6 @@ export default class Blog extends Component {
 			<div ref={node => this.node = node} className={`app-container`}>
 				<Header symbol={`❤️`} selectedIndex={1} />
 				<BlogContainer year={year} handleYearChange={this.handleYearChange}/>
-				<Footer />
 			</div>
 		);
 	}

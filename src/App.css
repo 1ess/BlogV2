@@ -197,7 +197,7 @@ strong {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  background-color: #fbfbfd;
+  /* background-color: #fbfbfd; */
   color: #998da0;
   font-size: .875em;
   overflow-x: auto;
@@ -3153,7 +3153,7 @@ a.box:active {
 }
 
 .textarea:not([rows]) {
-  max-height: 600px;
+  /* max-height: 600px; */
   min-height: 120px
 }
 
@@ -10947,16 +10947,16 @@ print {
 }
 
 .section {
-  padding: 3rem 1.5rem
+  padding: 3rem 1.5rem;
 }
 
 @media screen and (min-width:1024px) {
   .section.is-medium {
-      padding: 4rem 1.5rem
+      padding: 4rem 1.5rem;
   }
 
   .section.is-large {
-      padding: 9rem 1.5rem
+      padding: 9rem 1.5rem;
   }
 }
 
@@ -13807,7 +13807,7 @@ print {
 }
 
 .loading-container {
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem - 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13815,7 +13815,7 @@ print {
 }
 
 .detail-loading-container {
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 10rem - 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
