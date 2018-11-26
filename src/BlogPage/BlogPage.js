@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link } from "react-router-dom";
+
 import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
+import BlogDetailContainer from '../BlogDetailContainer/BlogDetailContainer';
 
-import marked from 'marked';
-import axios from 'axios';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 
 const BlogHeader = ({year, headerTitle}) => (
     <nav className={`breadcrumb is-medium`}> 
@@ -18,41 +17,6 @@ const BlogHeader = ({year, headerTitle}) => (
     </nav>
 );
 
-const BlogContent = ({title, content}) => {
-    var markdown = marked(content, {
-        gfm: true,
-        tables: true,
-        breaks: true,
-        highlight: function(code) {
-            return hljs.highlightAuto(code).value;
-          },
-    });
-    console.log(content);
-    return (
-        <div className={`content is-medium is-blog`}>
-            <h1 className={`title is-spaced`}>{title}</h1>
-            <div className={`section-body`}>
-                <div dangerouslySetInnerHTML={{ __html: markdown }}></div>
-            </div>
-        </div>
-    )
-}
-
-const BlogContainer = ({year, headerTitle, title, content, zero}) => (
-    <main className={`app-content has-background`}>
-        <section className={`section is-storyworlds has-background is-medium  special-container`}>
-            <div className="container">
-                <div className={`columns is-centered`}>
-                    <div className={`column is-7-fullhd is-9-widescreen is-10-tablet`}>
-                        <BlogHeader year={year} headerTitle={headerTitle} />
-                        <BlogContent title={title} content={content} />
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-);
-
 export default class BlogPage extends Component {
     _isMounted = false;
     constructor(props) {
@@ -61,7 +25,7 @@ export default class BlogPage extends Component {
         this.state = {
             title: ``,
             content: ``,
-            isloading: true,
+            loading: true,
             error: false
         };
     }
@@ -95,29 +59,40 @@ export default class BlogPage extends Component {
             });
         }).then(function () {
             self.setState({
-                isloading: false                
+                loading: false                
             });
         });
     }
     
 
     render() {
-        const {title, content, isloading, error} = this.state;
+        const {title, content, loading, error} = this.state;
         const {year, tag} = this.props.match.params;
         return (
             <div ref={node => this.node = node} className={`app-container`}>
                 <Header symbol={`❤️`} selectedIndex={1} />
-                {
-                    isloading
-                    ?
-                    <Loading content={`Loading...`} />
-                    :
-                    error
-                    ?
-                    <Loading content={`Panic.`} />
-                    :
-                    <BlogContainer year={`${year}`} headerTitle={`${tag}`} title={title} content={content} />
-                }
+                <main className={`app-content has-background`}>
+                    <section className={`section is-storyworlds has-background is-medium special-container`}>
+                        <div className="container">
+                            <div className={`columns is-centered`}>
+                                <div className={`column is-7-fullhd is-9-widescreen is-10-tablet`}>
+                                    <BlogHeader year={`${year}`} headerTitle={`${tag}`} />
+                                    {
+                                        loading
+                                        ?
+                                        <Loading className={`detail-loading-container`} content={`Loading...`} />
+                                        :
+                                        error
+                                        ?
+                                        <Loading className={`detail-loading-container`} content={`Kernel Panic.`} />
+                                        :
+                                        <BlogDetailContainer title={title} content={content} />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
         );
     }
