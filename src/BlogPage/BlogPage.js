@@ -44,15 +44,21 @@ export default class BlogPage extends Component {
             url: `https://api.godzzzzz.club/api/detail/${tag}`,
             data: {}
         }).then(function (response) {
-            const detail = response.data.detail;
             if (self._isMounted) {
-                document.title = ` ❤️ ${detail.title}`;
-                self.setState({
-                    title: detail.title,
-                    content: detail.content
-                });
+                if (!response.data.result.code) {
+                    const detail = response.data.detail;
+                    document.title = ` ❤️ ${detail.title}`;
+                    self.setState({
+                        title: detail.title,
+                        content: detail.content
+                    });
+                }else {
+                    self.setState({
+                        error: true
+                    });
+                }
             }
-        }).catch(function (error) {
+        }).catch(function () {
             self.setState({
                 error: true
             });
@@ -63,7 +69,6 @@ export default class BlogPage extends Component {
         });
     }
     
-
     render() {
         const {title, content, loading, error} = this.state;
         const {year, tag} = this.props.match.params;
