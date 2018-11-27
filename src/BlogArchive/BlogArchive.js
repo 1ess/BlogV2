@@ -5,14 +5,9 @@ import { Link } from "react-router-dom";
 import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
 
-
-const Tag = ({className, content}) => (
-    <span className={`tag ` + className}>{content}</span>
-)
-
 class ArchiveItem extends Component {
     render() {
-        const {tag, title, year, summary, label} = this.props;
+        const {tag, title, year, summary} = this.props;
         return (
             <li className={`item panic-item`}>
                 <Link className={`archive-item`} to={`/blog/archive/${year}/${tag}`} >
@@ -21,9 +16,6 @@ class ArchiveItem extends Component {
                         <span className={`sharp-num`} name={`tag`}>{tag}</span>
                         <span className={`sharp-num`}> - </span>
                         <span className={`title is-4 has-text-weight-normal panic-title`}>{title} </span>
-                    </div>
-                    <div className={`tags`}>
-                        <Tag content={label.content} className={label.className} />
                     </div>
                     <p className={`panic-summary`}>{summary}</p>
                 </Link>
@@ -48,7 +40,7 @@ const ArchiveContainer = ({loading, error, items, handleItemClick}) => (
                     <ul className={`numbered-list`}>
                         {
                             items.map((item) => (
-                                <ArchiveItem key={item.id} id={item.id} tag={item.tag} label={item.label} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={handleItemClick}/>
+                                <ArchiveItem key={item.id} id={item.id} tag={item.tag} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={handleItemClick}/>
                             ))
                         }
                     </ul>
