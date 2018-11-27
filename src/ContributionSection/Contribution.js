@@ -22,7 +22,7 @@ export default class Contribution extends Component {
         super(props);
         this.state = { items: [
             {
-                "symbol": `🌌`,
+                "symbol": `📝`,
                 "slogan": `一个集成简单交互效果不错的图片浏览器`,
                 "project_name": `MFPictureBrowser`,
                 "project_link": `https://github.com/GodzzZZZ/MFPictureBrowser`
