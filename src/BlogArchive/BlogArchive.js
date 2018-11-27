@@ -8,19 +8,21 @@ import Loading from '../Loading/Loading';
 
 class ArchiveItem extends Component {
     render() {
-        const {tag, title, year, date, summary} = this.props;
+        const {tag, title, year, summary} = this.props;
         return (
             <li className={`item panic-item`}>
-                <Link to={`/blog/archive/${year}/${tag}`} >
-                    <span className={`sharp-num`}>#</span>
-                    <span className={`sharp-num`} name={`tag`}>{tag}</span>
-                    <span className={`sharp-num`}> - </span>
-                    <span className={`title is-4 has-text-weight-normal panic-title`}>{title} </span>
-                    <h4>
+                <Link className={`archive-item`} to={`/blog/archive/${year}/${tag}`} >
+                    <div className={`title-container`}>
+                        <span className={`sharp-num`}>#</span>
+                        <span className={`sharp-num`} name={`tag`}>{tag}</span>
+                        <span className={`sharp-num`}> - </span>
+                        <span className={`title is-4 has-text-weight-normal panic-title`}>{title} </span>
+                    </div>
+                    {/* <h4>
                         <span className={`subtitle panic-subtitle`}>{year}</span>
                         <span className={`subtitle panic-subtitle`}>{`  ` + date}</span>
-                    </h4>
-                    <p>{summary}</p>
+                    </h4> */}
+                    <p className={`panic-summary`}>{summary}</p>
                 </Link>
             </li>
         );

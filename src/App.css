@@ -13719,13 +13719,33 @@ a strong {
   border-radius: 1rem;
 }
 
+.panic-summary {
+  letter-spacing:1.6px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.panic-item:hover {
+  background: #f6f6f6;
+}
+
+a.archive-item:hover {
+  color: #998da0;
+}
+
 .panic-title {
   margin-bottom: 0 !important ;
+  color: #998da0;
 }
 
 .panic-subtitle {
   margin-top: 0.3rem !important;
   margin-bottom: 0.5rem !important;
+  color: #ccc;
+}
+
+.title-container {
+  padding-bottom: 1rem;
 }
 
 .kernel-is-loading {
