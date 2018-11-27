@@ -64,6 +64,6 @@ export default class Contribution extends Component {
                     </div>
                 </div>
             </section>
-      );
+        );
     }
-  }
+}
