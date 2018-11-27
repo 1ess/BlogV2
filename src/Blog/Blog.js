@@ -29,7 +29,7 @@ export default class Blog extends Component {
 		return (
 			<div ref={node => this.node = node} className={`app-container`}>
 				<Header symbol={`❤️`} selectedIndex={1} />
-				<BlogContainer year={year} handleYearChange={this.handleYearChange}/>
+				<BlogContainer year={year} handleYearChange={this.handleYearChange} />
 			</div>
 		);
 	}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import NavLinks from '../NavLinks/NavLinks';
 import burger from '../ev';
+
 import '../App.css';
 import icon from '../icon.jpg';
 
@@ -41,15 +43,15 @@ export default class Header extends Component {
     render() {
       const { symbol, selectedIndex } = this.props;
 
-      return (
-        <header className="app-header">
-          <nav className="navbar is-fixed-top is-small">
-                <div className="container">
-                    <NavBrand icon={icon} symbol={symbol} />
-                    <Nav selectedIndex={selectedIndex} />
-                </div>
-            </nav>
-        </header>
-      );
+        return (
+            <header className="app-header">
+                <nav className="navbar is-fixed-top is-small">
+                    <div className="container">
+                        <NavBrand icon={icon} symbol={symbol} />
+                        <Nav selectedIndex={selectedIndex} />
+                    </div>
+                </nav>
+            </header>
+        );
     }
-  }
+}

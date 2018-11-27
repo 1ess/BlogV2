@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import '../Error.css';
 import error from '../404.gif';
+
 export default class Error extends React.Component {
     componentDidMount() {
         document.title = "Oops! Page Not Found";
@@ -14,7 +16,7 @@ export default class Error extends React.Component {
                     <br /> Try the <Link className="Error_btn" to='/blog/2018'>home page</Link>.
                 </p>
                 <div className="Error_caveman-gif">
-                    <img src={error} alt=""/>
+                    <img src={error} alt="" />
                 </div>
             </div>
 		)

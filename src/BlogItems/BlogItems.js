@@ -20,7 +20,6 @@ export default class BlogItems extends Component {
         }, 0);
     }
     
-
     render() {
         const {year, items} = this.props;
         const {transparent} = this.state;

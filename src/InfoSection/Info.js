@@ -33,7 +33,7 @@ const Picture = () => (
     <div className="column is-5 is-offset-1">
         <div id="messages" className="messages">
             <div className="message is-shown">
-                <img className="message-img" src={messageImg} alt={``}/>
+                <img className="message-img" src={messageImg} alt={``} />
             </div>
         </div>
     </div>
@@ -55,4 +55,4 @@ export default class Info extends Component {
             </section>
         );
     }
-  }
+}

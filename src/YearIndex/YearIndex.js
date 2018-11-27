@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 import '../App.css';
 import '../Blog.css';
 
@@ -41,4 +42,4 @@ export default class YearIndex extends Component {
             </div>
         );
     }
-  }
+}

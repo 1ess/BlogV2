@@ -86,7 +86,6 @@ export default class BlogContainer extends Component {
             url: `https://api.godzzzzz.club/api/blogs/year/${year}`,
             data: {},
             cancelToken: new axios.CancelToken(function executor(c) {
-                // An executor function receives a cancel function as a parameter
                 self.cancel = c;
             })
         }).then(function (response) {
@@ -125,9 +124,6 @@ export default class BlogContainer extends Component {
             }           
         })
     }
-
-    handle
-
 
     render() {
         const {year} = this.props;

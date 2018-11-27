@@ -52,6 +52,6 @@ export default class Info extends Component {
                     </div>
                 </div>
             </section>
-      );
+        );
     }
-  }
+}

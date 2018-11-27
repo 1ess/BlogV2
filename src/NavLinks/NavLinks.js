@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import NavLinkItem from '../NavLinkItem/NavLinkItem';
 
 export default class NavLinks extends Component {
