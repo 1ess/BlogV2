@@ -59,13 +59,17 @@ export default class BlogPage extends Component {
                 }
             }
         }).catch(function () {
-            self.setState({
-                error: true
-            });
+            if (self._isMounted) {
+                self.setState({
+                    error: true
+                });
+            }
         }).then(function () {
-            self.setState({
-                loading: false                
-            });
+            if (self._isMounted) {
+                self.setState({
+                    loading: false                
+                });
+            }
         });
     }
     
