@@ -80,7 +80,7 @@ export default class BlogPage extends Component {
         const {year, tag} = this.props.match.params;
         return (
             <div ref={node => this.node = node} className={`app-container`}>
-                <Header symbol={`❤️`} selectedIndex={1} />
+                <Header symbol={`❤️`} selectedIndex={archive ? 2 : 1} />
                 <main className={`app-content has-background`}>
                     <section className={`section is-storyworlds has-background is-medium special-container`}>
                         <div className="container">
