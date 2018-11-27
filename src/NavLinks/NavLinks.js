@@ -14,6 +14,10 @@ export default class NavLinks extends Component {
                 {
                     link: `/blog/2018`,
                     title: `Blog`
+                },
+                {
+                    link: `/blog/archive`,
+                    title: `Archive`
                 }
             ]
         }

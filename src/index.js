@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from './App';
 import Blog from './Blog/Blog';
 import BlogPage from './BlogPage/BlogPage';
+import BlogArchive from './BlogArchive/BlogArchive';
 import ErrorPage from './Error/Error';
 
 import './index.css';
@@ -15,6 +16,8 @@ ReactDOM.render((
             <Route exact path="/" component={App} />
             <Route exact path="/blog/:year(2018|2019)" component={Blog} />
             <Route exact path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
+            <Route exact path="/blog/archive" component={BlogArchive} />
+            <Route exact path="/blog/archive/:year(2018|2019)/:tag" component={BlogPage} />
             <Route component={ErrorPage} />
         </Switch>
     </Router>

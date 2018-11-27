@@ -6,11 +6,11 @@ import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
 import BlogDetailContainer from '../BlogDetailContainer/BlogDetailContainer';
 
-const BlogHeader = ({year, headerTitle}) => (
+const BlogHeader = ({archive, year, headerTitle}) => (
     <nav className={`breadcrumb is-medium`}> 
         <ul> 
-            <li><Link to={`/blog/2018`}><span className={`blog-link`}>{`Blogs`}</span></Link></li> 
-            <li><Link to={`/blog/${year}`}><span className={`blog-link`}>{year}</span></Link></li> 
+            <li><Link to={archive ? `/blog/archive` : `/blog/2018`}><span className={`blog-link`}>{`Blogs`}</span></Link></li> 
+            <li><Link to={archive ? `/blog/archive` : `/blog/${year}`}><span className={`blog-link`}>{archive ? `archive` : year}</span></Link></li> 
             <li className={`is-active`}> <Link to={`#`}><span className={`blog-link`}>{headerTitle}</span></Link></li> 
         </ul>
     </nav>
@@ -21,11 +21,13 @@ export default class BlogPage extends Component {
     constructor(props) {
         super(props);
         this._isMounted = true;
+        console.log();
         this.state = {
             title: ``,
             content: ``,
             loading: true,
-            error: false
+            error: false,
+            archive: (props.match.url.indexOf('archive') !== -1)
         };
     }
 
@@ -74,7 +76,7 @@ export default class BlogPage extends Component {
     }
     
     render() {
-        const {title, content, loading, error} = this.state;
+        const {title, content, loading, error, archive} = this.state;
         const {year, tag} = this.props.match.params;
         return (
             <div ref={node => this.node = node} className={`app-container`}>
@@ -84,7 +86,7 @@ export default class BlogPage extends Component {
                         <div className="container">
                             <div className={`columns is-centered`}>
                                 <div className={`column is-7-fullhd is-9-widescreen is-10-tablet`}>
-                                    <BlogHeader year={`${year}`} headerTitle={`${tag}`} />
+                                    <BlogHeader archive={archive} year={`${year}`} headerTitle={`${tag}`} />
                                     {
                                         loading
                                         ?
