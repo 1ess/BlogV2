@@ -191,8 +191,8 @@ span {
 }
 
 strong {
-  color: #463853;
-  font-weight: 500
+  color: #0470DC;
+  padding: 0 0.2rem;
 }
 
 pre {
@@ -13579,7 +13579,7 @@ print {
 
 .content a:not(.button) {
   text-decoration: underline;
-  color: #463853
+  color: #459522
 }
 
 @media(min-width:769px) {
@@ -13651,7 +13651,7 @@ hr {
 
 .content a:not(.button) {
   text-decoration: none;
-  color: #463853
+  color: #459522
 }
 
 @media screen and (max-width:768px),
