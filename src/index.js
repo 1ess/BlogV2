@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import App from './App';
+import About from './About/About';
 import Blog from './Blog/Blog';
 import BlogPage from './BlogPage/BlogPage';
 import BlogArchive from './BlogArchive/BlogArchive';
@@ -14,6 +15,7 @@ ReactDOM.render((
     <Router>
         <Switch>
             <Route exact path="/" component={App} />
+            <Route exact path="/about" component={About}/>
             <Route exact path="/blog/:year(2018|2019)" component={Blog} />
             <Route exact path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
             <Route exact path="/blog/archive" component={BlogArchive} />
