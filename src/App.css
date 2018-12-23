@@ -13636,6 +13636,11 @@ print {
   box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .2)
 }
 
+.shadow.is-purple {
+  -webkit-box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .2);
+  box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .2)
+}
+
 .hello {
   font-size: 1.5rem;
   max-width: 17em
