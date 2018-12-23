@@ -11,7 +11,7 @@ const ContributionItem = ({ symbol, slogan, project_name, project_link }) => (
             <span role ="img" aria-label="">{symbol}</span> {slogan}
         </div>
         <div className="column is-3 github-button">
-            <a className="button is-medium is-danger bd-rainbow" href={project_link}><span> more <strong>Detail</strong> 🤗</span></a>
+            <a className="button is-medium is-danger bd-rainbow shadowpower2" href={project_link}><span> more <strong>Detail</strong> 🤗</span></a>
         </div>
     </div>
 )
