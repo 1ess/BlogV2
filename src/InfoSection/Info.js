@@ -12,10 +12,10 @@ const Summary = ({blog_link}) => (
         <div className="content hello">
             <p>Hey I'm GodzzZZZ.</p>
             <p>I'm a
-                <Introduction className={`is-danger`} introduction={` React developer `} />,
-                <Introduction className={`is-purple`} introduction={` .Net developer `} />,
-                <Introduction className={`is-turquoise`} introduction={` iOS developer `} />,
-                <Introduction className={`is-warning`} introduction={` Blogger `} />,
+                <Introduction className={`is-danger`} introduction={` React developer `} />、
+                <Introduction className={`is-purple`} introduction={`.Net developer `} />、
+                <Introduction className={`is-turquoise`} introduction={`iOS developer `} />、
+                <Introduction className={`is-warning`} introduction={`Blogger `} /> and
                 <Introduction className={`is-success`} introduction={` Open source activist `} />.
             </p>
             <p>
