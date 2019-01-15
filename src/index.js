@@ -7,6 +7,7 @@ import About from './About/About';
 import Blog from './Blog/Blog';
 import BlogPage from './BlogPage/BlogPage';
 import BlogArchive from './BlogArchive/BlogArchive';
+import AppBlogDetail from './AppBlogDetail/AppBlogDetail';
 import ErrorPage from './Error/Error';
 
 import './index.css';
@@ -20,6 +21,7 @@ ReactDOM.render((
             <Route exact path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
             <Route exact path="/blog/archive" component={BlogArchive} />
             <Route exact path="/blog/archive/:year(2018|2019)/:tag" component={BlogPage} />
+            <Route exact path="/blog/app/:tag" component={AppBlogDetail} />
             <Route component={ErrorPage} />
         </Switch>
     </Router>
