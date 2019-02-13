@@ -10,11 +10,11 @@ const Introduction = ({className = '', introduction}) => (
 const Summary = ({blog_link}) => (
     <div className="column is-half">
         <div className="content hello">
-            <p>Hey I'm GodzzZZZ.</p>
+            <p>Hey someone.</p>
             <p>I'm a
                 <Introduction className={`is-danger`} introduction={` Programmer `} />、
-                <Introduction className={`is-warning`} introduction={`Blogger `} /> and
-                <Introduction className={`is-success`} introduction={` Open source activist `} />.
+                <Introduction className={`is-warning`} introduction={` Blogger `} /> and
+                <Introduction className={`is-success`} introduction={` Open Source Activist `} />.
             </p>
             <p>
                 Find me on
