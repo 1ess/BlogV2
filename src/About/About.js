@@ -11,7 +11,7 @@ const BaseInfo = () => (
         <p className={`base-info is-gray`}>利用自己的技术，让生活更加美好</p>
 
         <p className={`is-title`}>一个"敲代码的"</p>
-        <p className={`base-info is-gray`}>Objective-C & C# & JavaScript</p>
+        <p className={`base-info is-gray`}>Objective-C & C# & JavaScript & Python</p>
 
         <p className={`is-title`}>一个"搞设计的"</p>
         <p className={`base-info is-gray`}>将灵感变为现实</p>
@@ -27,10 +27,10 @@ const Skills = () => (
     <div className="column is-half">
         <h2 className={`title-padding-bottom`}>Skill</h2>
         <p className={`is-title`}>编程语言</p>
-        <p className={`base-info is-gray`}>Objective-C & C# & JavaScript (ES6)</p>
+        <p className={`base-info is-gray`}>Objective-C & C# & JavaScript (ES6) & Python</p>
 
         <p className={`is-title`}>开发工具</p>
-        <p className={`base-info is-gray`}>XCode & Visual Studio & Visual Studio Code</p>
+        <p className={`base-info is-gray`}>XCode & Visual Studio & Visual Studio Code & PyCharm</p>
 
         <p className={`is-title`}>前端框架</p>
         <p className={`base-info is-gray`}>React & React-router & Bootstrap & Bulma</p>
