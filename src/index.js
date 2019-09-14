@@ -18,10 +18,10 @@ ReactDOM.render((
             <Route exact path="/" component={App} />
             <Route exact path="/about" component={About}/>
             <Route exact path="/blog/:year(2018|2019)" component={Blog} />
-            <Route exact path="/blog/:year(2018|2019)/:tag" component={BlogPage} />
+            <Route exact path="/blog/:year(2018|2019)/:id" component={BlogPage} />
             <Route exact path="/blog/archive" component={BlogArchive} />
-            <Route exact path="/blog/archive/:year(2018|2019)/:tag" component={BlogPage} />
-            <Route exact path="/blog/app/:tag" component={AppBlogDetail} />
+            <Route exact path="/blog/archive/:year(2018|2019)/:id" component={BlogPage} />
+            <Route exact path="/blog/app/:id" component={AppBlogDetail} />
             <Route component={ErrorPage} />
         </Switch>
     </Router>

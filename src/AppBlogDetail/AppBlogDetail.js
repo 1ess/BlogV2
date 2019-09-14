@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Loading from '../Loading/Loading';
 import BlogDetailContainer from '../BlogDetailContainer/BlogDetailContainer';
+import '../config.js';
 
 export default class BlogPage extends Component {
     _isMounted = false;
@@ -26,12 +27,12 @@ export default class BlogPage extends Component {
     componentDidMount() {
         this._isMounted = true;
         document.title = " ❤️ Blog";
-        const {tag} = this.props.match.params;
+        const {id} = this.props.match.params;
         this.node.scrollIntoView();
         const self = this;
         axios({
             method: 'get',
-            url: `https://api.godzzzzz.club/api/detail/${tag}`,
+            url: `${global.constants.host}/api/detail/${id}`,
             data: {}
         }).then(function (response) {
             if (self._isMounted) {

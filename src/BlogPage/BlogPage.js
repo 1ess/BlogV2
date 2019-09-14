@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
 import BlogDetailContainer from '../BlogDetailContainer/BlogDetailContainer';
+import '../config.js';
 
 const BlogHeader = ({archive, year, headerTitle}) => (
     <nav className={`breadcrumb is-medium`}> 
@@ -38,12 +39,12 @@ export default class BlogPage extends Component {
     componentDidMount() {
         this._isMounted = true;
         document.title = " ❤️ Blog";
-        const {tag} = this.props.match.params;
+        const {id} = this.props.match.params;
         this.node.scrollIntoView();
         const self = this;
         axios({
             method: 'get',
-            url: `https://api.godzzzzz.club/api/detail/${tag}`,
+            url: `${global.constants.host}/api/detail/${id}`,
             data: {}
         }).then(function (response) {
             if (self._isMounted) {
@@ -77,7 +78,7 @@ export default class BlogPage extends Component {
     
     render() {
         const {title, content, loading, error, archive} = this.state;
-        const {year, tag} = this.props.match.params;
+        const {year, id} = this.props.match.params;
         return (
             <div ref={node => this.node = node} className={`app-container`}>
                 <Header symbol={`❤️`} selectedIndex={archive ? 2 : 1} />
@@ -86,7 +87,7 @@ export default class BlogPage extends Component {
                         <div className="container">
                             <div className={`columns is-centered`}>
                                 <div className={`column is-7-fullhd is-9-widescreen is-10-tablet`}>
-                                    <BlogHeader archive={archive} year={`${year}`} headerTitle={`${tag}`} />
+                                    <BlogHeader archive={archive} year={`${year}`} headerTitle={`${id}`} />
                                     {
                                         loading
                                         ?

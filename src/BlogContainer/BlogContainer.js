@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import BlogList from '../BlogList/BlogList';
 import YearIndex from '../YearIndex/YearIndex';
+import '../config.js';
 
 export default class BlogContainer extends Component {
     _isMounted = false;
@@ -27,7 +28,7 @@ export default class BlogContainer extends Component {
         const {year} = this.props;
         axios({
             method: 'get',
-            url: `https://api.godzzzzz.club/api/blogs/year/${year}`,
+            url: `${global.constants.host}/api/blogs/year/${year}`,
             data: {},
             cancelToken: new axios.CancelToken(function executor(c) {
                 self.cancel = c;
@@ -83,7 +84,7 @@ export default class BlogContainer extends Component {
         const self = this;
         axios({
             method: 'get',
-            url: `https://api.godzzzzz.club/api/blogs/year/${year}`,
+            url: `${global.constants.host}/api/blogs/year/${year}`,
             data: {},
             cancelToken: new axios.CancelToken(function executor(c) {
                 self.cancel = c;

@@ -29,7 +29,7 @@ export default class BlogItems extends Component {
                 <Fragment>
                 {
                     items.map(item => (
-                        <BlogItem year={year} key={item.id} number={``+ (item.tag)} title={item.title} date_time={item.date} summary={item.summary} />
+                        <BlogItem year={year} key={item.id} number={``+ (item.id)} title={item.title} date_time={item.date} summary={item.summary} />
                         )
                     )
                 }

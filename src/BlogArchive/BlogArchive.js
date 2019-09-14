@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 
 import Header from '../Header/Header';
 import Loading from '../Loading/Loading';
+import '../config.js';
 
 class ArchiveItem extends Component {
     render() {
-        const {tag, title, year, summary} = this.props;
+        const {id, title, year, summary} = this.props;
         return (
             <li className={`item panic-item`}>
-                <Link className={`archive-item`} to={`/blog/archive/${year}/${tag}`} >
+                <Link className={`archive-item`} to={`/blog/archive/${year}/${id}`} >
                     <div className={`title-container`}>
                         <span className={`sharp-num`}>#</span>
-                        <span className={`sharp-num`} name={`tag`}>{tag}</span>
+                        <span className={`sharp-num`} name={`id`}>{id}</span>
                         <span className={`sharp-num`}> - </span>
                         <span className={`title is-4 has-text-weight-normal panic-title`}>{title} </span>
                     </div>
@@ -40,7 +41,7 @@ const ArchiveContainer = ({loading, error, items, handleItemClick}) => (
                     <ul className={`numbered-list`}>
                         {
                             items.map((item) => (
-                                <ArchiveItem key={item.id} id={item.id} tag={item.tag} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={handleItemClick}/>
+                                <ArchiveItem key={item.id} id={item.id} title={item.title} date={item.date} summary={item.summary} year={item.year} handleItemClick={handleItemClick}/>
                             ))
                         }
                     </ul>
@@ -67,7 +68,7 @@ export default class BlogArchive extends Component {
         const self = this;
         axios({
             method: 'get',
-            url: 'https://api.godzzzzz.club/api/blogs/year/all',
+            url: `${global.constants.host}/api/blogs/year/all`,
             data: {}
         }).then(function (response) {
             self.setState({
