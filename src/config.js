@@ -1,3 +1,3 @@
 global.constants = {
-    host:'https://0xfee1dead.cn:12302'
+    host:'http://106.54.43.50:12301'
 };
