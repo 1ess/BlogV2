@@ -1,3 +1,3 @@
 global.constants = {
-    host:'https://api.0xfee1dead.cn'
+    host:'https://0xfee1dead.cn'
 };
