@@ -33,10 +33,10 @@ jobs:
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ~/BlogCDN/ &&
-           sudo git rm ./1.css &&
-           sudo git rm ./main.css &&
-           sudo git rm ./1.js &&
-           sudo git rm ./main.js &&
+           find ./ -iname '1.css' -exec sudo git rm {} \; &&
+           find ./ -iname 'main.css' -exec sudo git rm {} \; &&
+           find ./ -iname '1.js' -exec sudo git rm {} \; &&
+           find ./ -iname 'main.js' -exec sudo git rm {} \; &&
            echo '----------------------------------------------------' &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
