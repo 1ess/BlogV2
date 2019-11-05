@@ -26,8 +26,13 @@ jobs:
     - name: Push js and css task
       env:
         GITHUB_PWD: ${{ secrets.GITHUB_PWD }}
+        ID_RSA: ${{secrets.ID_RSA}}
+        ID_RSA_PUB: ${{secrets.ID_RSA_PUB}}
       run:
-           pwd &&
+           echo $ID_RSA > ~/.ssh/id_rsa &&
+           echo $ID_RSA_PUB > ~/.ssh/id_rsa.pub &&
+           echo $ID_RSA &&
+           echo $ID_RSA_PUB &&
            cd ../.. && 
            sudo mkdir cdn/ && 
            sudo git clone git@github.com:GodzzZZZ/BlogCDN.git && 
