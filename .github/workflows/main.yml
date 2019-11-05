@@ -38,7 +38,7 @@ jobs:
            find ./ -iname '1.js' -exec sudo git rm {} \; &&
            find ./ -iname 'main.js' -exec sudo git rm {} \; &&
            echo $nothing &&
-           export status = git status &&
+           export status=git status &&
            echo $status &&
            echo '----------------------------------------------------' &&
            sudo git add . &&
