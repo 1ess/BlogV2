@@ -34,6 +34,8 @@ jobs:
            sudo touch ~/.ssh/id_rsa.pub &&
            sudo chmod 777 ~/.ssh/id_rsa && 
            sudo chmod 777 ~/.ssh/id_rsa.pub && 
+           sudo touch ~/.ssh/known_hosts &&
+           sudo chmod 777 ~/.ssh/known_hosts && 
            sudo ssh-keyscan -H github.com >> ~/.ssh/known_hosts &&
            sudo echo 'create success' &&
            sudo echo $ID_RSA &&
