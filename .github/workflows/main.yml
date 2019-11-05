@@ -18,7 +18,7 @@ jobs:
       run: npm run build --if-present
     - name: Push js and css task
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PWD }}
+        GITHUB_PWD: ${{ secrets.GITHUB_PWD }}
       run:
            cd .. && 
            sudo mkdir cdn/ && 
