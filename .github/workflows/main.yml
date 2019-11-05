@@ -18,25 +18,23 @@ jobs:
       run: npm run build --if-present
     - name: Push js and css task
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PWD }}
       run:
-          pwd && 
-          cd .. && 
-           sudo mkdir /cdn/ && 
+           cd .. && 
+           sudo mkdir cdn/ && 
            sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
-           find /BlogCDN/ -iname '1.*.css' -exec cp {} /cdn/1.css \; &&
-           find /BlogCDN/ -iname 'main.*.css' -exec cp {} /cdn/main.css \; &&
-           find /BlogCDN/ -iname '1.*.js' -exec cp {} /cdn/1.js \; &&
-           find /BlogCDN/ -iname 'main.*.js' -exec cp {} /cdn/main.js \; &&
-           sudo rm -rf /BlogCDN/* &&
-           sudo mv /cdn/ /BlogCDN/ &&
+           find ./BlogCDN/ -iname '1.*.css' -exec cp {} ./cdn/1.css \; &&
+           find ./BlogCDN/ -iname 'main.*.css' -exec cp {} ./cdn/main.css \; &&
+           find ./BlogCDN/ -iname '1.*.js' -exec cp {} ./cdn/1.js \; &&
+           find ./BlogCDN/ -iname 'main.*.js' -exec cp {} ./cdn/main.js \; &&
+           sudo rm -rf ./BlogCDN/* &&
+           sudo mv ./cdn/ ./BlogCDN/ &&
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
-           cd /BlogCDN/ &&
-           ls -la &&
+           cd ./BlogCDN/ &&
            git add . &&
            git commit -m 'Update CDN file' &&
-           git remote set-url --push origin https://GodzzZZZ:$GITHUB_TOKEN@github.com/GodzzZZZ/BlogCDN
+           git remote set-url --push origin https://GodzzZZZ:$GITHUB_PWD@github.com/GodzzZZZ/BlogCDN
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
