@@ -25,26 +25,11 @@ jobs:
       run: npm run build --if-present
     - name: Push js and css task
       env:
-        GITHUB_PWD: ${{ secrets.GITHUB_PWD }}
-        ID_RSA: ${{secrets.ID_RSA}}
-        ID_RSA_PUB: ${{secrets.ID_RSA_PUB}}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run:
-           sudo mkdir ~/.ssh &&
-           sudo touch ~/.ssh/id_rsa &&
-           sudo touch ~/.ssh/id_rsa.pub &&
-           sudo chmod 777 ~/.ssh/id_rsa && 
-           sudo chmod 777 ~/.ssh/id_rsa.pub && 
-           sudo touch ~/.ssh/known_hosts &&
-           sudo chmod 777 ~/.ssh/known_hosts && 
-           sudo ssh-keyscan -H github.com >> ~/.ssh/known_hosts &&
-           sudo echo 'create success' &&
-           sudo echo $ID_RSA &&
-           sudo echo $ID_RSA_PUB &&
-           sudo echo $ID_RSA > ~/.ssh/id_rsa &&
-           sudo echo $ID_RSA_PUB > ~/.ssh/id_rsa.pub &&
            cd ../.. && 
            sudo mkdir cdn/ && 
-           sudo git clone git@github.com:GodzzZZZ/BlogCDN.git && 
+           sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
            find ./BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ./cdn/1.css \; &&
            find ./BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ./cdn/main.css \; &&
            find ./BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec sudo cp {} ./cdn/1.js \; &&
@@ -56,7 +41,7 @@ jobs:
            cd ./BlogCDN/ &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
-           sudo git push -u origin master
+           sudo git push https://GodzzZZZ:$GITHUB_TOKEN@github.com/GodzzZZZ/BlogCDN.git
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
