@@ -38,11 +38,11 @@ jobs:
            find ./ -iname '1.js' -exec sudo git rm {} \; &&
            find ./ -iname 'main.js' -exec sudo git rm {} \; &&
            echo $nothing &&
-           export status = (git status) &&
+           export status = git status &&
            echo $status &&
            echo '----------------------------------------------------' &&
-           export status = $(git status) &&
-           echo $status &&
+          #  export status = $(git status) &&
+          #  echo $status &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
