@@ -32,6 +32,10 @@ jobs:
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ./BlogCDN/ &&
+           sudo git status &&
+           ls -la &&
+           cd ./cdn/ &&
+           ls -la &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git remote set-url --push origin https://GodzzZZZ:$GITHUB_PWD@github.com/GodzzZZZ/BlogCDN
