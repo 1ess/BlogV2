@@ -27,6 +27,7 @@ jobs:
       env:
         CDN_TOKEN: ${{ secrets.CDN_TOKEN }}
       run:
+           pwd &&
            cd ~ && 
            sudo mkdir cdn/ && 
            sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
