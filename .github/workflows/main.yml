@@ -24,10 +24,10 @@ jobs:
            cd ../.. && 
            sudo mkdir cdn/ && 
            sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
-           find ./BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec cp {} ./cdn/1.css \; &&
-           find ./BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec cp {} ./cdn/main.css \; &&
-           find ./BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec cp {} ./cdn/1.js \; &&
-           find ./BlogV2/BlogV2/build/static/js/ -iname 'main.*.js' -exec cp {} ./cdn/main.js \; &&
+           find ./BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ./cdn/1.css \; &&
+           find ./BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ./cdn/main.css \; &&
+           find ./BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec sudo cp {} ./cdn/1.js \; &&
+           find ./BlogV2/BlogV2/build/static/js/ -iname 'main.*.js' -exec sudo cp {} ./cdn/main.js \; &&
            sudo rm -rf ./BlogCDN/* &&
            sudo mv ./cdn/* ./BlogCDN/ &&
            git config --global user.name "GodzzZZZ" && 
