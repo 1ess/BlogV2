@@ -39,7 +39,6 @@ jobs:
            find ./ -iname '1.js' -exec sudo git rm {} \; &&
            find ./ -iname 'main.js' -exec sudo git rm {} \; &&
            echo '----------------------------------------------------' &&
-           echo '----------------------------------------------------' &&
            pwd &&
            find ~/BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ~/cdn/1.css \; &&
            find ~/BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ~/cdn/main.css \; &&
