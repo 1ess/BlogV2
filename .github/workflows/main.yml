@@ -51,7 +51,7 @@ jobs:
            sudo chmod +x increment_tag.sh &&
            ./increment_tag.sh
            echo '------------------ tag add ---------------------' &&
-           git push --tag
+           sudo git push --tag
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
