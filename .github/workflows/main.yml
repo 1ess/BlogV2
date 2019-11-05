@@ -32,9 +32,9 @@ jobs:
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ./BlogCDN/ &&
-           git add . &&
-           git commit -m 'Update CDN file' &&
-           git remote set-url --push origin https://GodzzZZZ:$GITHUB_PWD@github.com/GodzzZZZ/BlogCDN
+           sudo git add . &&
+           sudo git commit -m 'Update CDN file' &&
+           sudo git remote set-url --push origin https://GodzzZZZ:$GITHUB_PWD@github.com/GodzzZZZ/BlogCDN
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
