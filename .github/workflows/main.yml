@@ -48,8 +48,15 @@ jobs:
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
            echo '------------------ push success ---------------------' &&
-           sudo chmod +x increment_tag.sh &&
-           ./increment_tag.sh
+          #  sudo chmod +x increment_tag.sh &&
+          #  ./increment_tag.sh
+          version=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo $version
+          version=$(($version+1))
+          echo $version
+          newTag=$version
+          echo 'Create New Tag '$newTag
+          sudo git tag $newTag
            echo '------------------ tag add ---------------------' &&
            sudo git push --tag
     - name: Deploy to Server
