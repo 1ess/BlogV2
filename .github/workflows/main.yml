@@ -41,6 +41,8 @@ jobs:
            export status = (git status) &&
            echo $status &&
            echo '----------------------------------------------------' &&
+           export status = $(git status) &&
+           echo $status &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
