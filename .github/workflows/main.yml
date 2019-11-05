@@ -18,12 +18,14 @@ jobs:
       run: npm run build --if-present
     - name: Push js and css task
       run: cd / && 
+           sudo mkdir /cdn/ && 
            sudo git clone git@github.com:GodzzZZZ/BlogCDN.git && 
+           find /BlogCDN/ -iname '1.*.css' -exec cp {} /cdn/1.css \; &&
+           find /BlogCDN/ -iname 'main.*.css' -exec cp {} /cdn/main.css \; &&
+           find /BlogCDN/ -iname '1.*.js' -exec cp {} /cdn/1.js \; &&
+           find /BlogCDN/ -iname 'main.*.js' -exec cp {} /cdn/main.js \; &&
            sudo rm -rf /BlogCDN/*
-           find /BlogCDN/ -iname '1.*.css' -exec cp {} ./1.css \; &&
-           find /BlogCDN/ -iname 'main.*.css' -exec cp {} ./main.css \; &&
-           find /BlogCDN/ -iname '1.*.js' -exec cp {} ./1.js \; &&
-           find /BlogCDN/ -iname 'main.*.js' -exec cp {} ./main.js \; &&
+           mv /cdn/* /BlogCDN/
            ls -l /BlogCDN/
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
