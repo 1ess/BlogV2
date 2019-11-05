@@ -34,7 +34,7 @@ jobs:
            ls -la &&
            git add . &&
            git commit -m 'Update CDN file' &&
-           git push -f https://$SSH_PRIVATE_KEY@github.com/GodzzZZZ/BlogCDN.git
+           git push
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
