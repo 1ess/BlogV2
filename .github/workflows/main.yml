@@ -24,18 +24,16 @@ jobs:
            cd ../.. && 
            sudo mkdir cdn/ && 
            sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
-           find ../ -iname '1.*.css' -exec cp {} ./cdn/1.css \; &&
-           find ./BlogCDN/ -iname 'main.*.css' -exec cp {} ./cdn/main.css \; &&
-           find ./BlogCDN/ -iname '1.*.js' -exec cp {} ./cdn/1.js \; &&
-           find ./BlogCDN/ -iname 'main.*.js' -exec cp {} ./cdn/main.js \; &&
+           find ./BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec cp {} ./cdn/1.css \; &&
+           find ./BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec cp {} ./cdn/main.css \; &&
+           find ./BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec cp {} ./cdn/1.js \; &&
+           find ./BlogV2/BlogV2/build/static/js/ -iname 'main.*.js' -exec cp {} ./cdn/main.js \; &&
            sudo rm -rf ./BlogCDN/* &&
-           sudo mv ./cdn/ ./BlogCDN/ &&
+           sudo mv ./cdn/* ./BlogCDN/ &&
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ./BlogCDN/ &&
-           sudo git status &&
-           ls -la &&
-           cd ./cdn/ &&
+           sudo git status &&1
            ls -la &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
