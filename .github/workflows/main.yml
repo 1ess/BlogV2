@@ -33,11 +33,14 @@ jobs:
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ~/BlogCDN/ &&
+           sudo touch date
+           time1=$(date)
+           sudo echo $time1 > date
            find ./ -iname '1.css' -exec sudo git rm {} \; &&
            find ./ -iname 'main.css' -exec sudo git rm {} \; &&
            find ./ -iname '1.js' -exec sudo git rm {} \; &&
            find ./ -iname 'main.js' -exec sudo git rm {} \; &&
-           echo '------------------ push success -------------------' &&
+           echo '------------------ rm success -----------------------' &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ~/cdn/1.css \; &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ~/cdn/main.css \; &&
            find ~/work/BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec sudo cp {} ~/cdn/1.js \; &&
