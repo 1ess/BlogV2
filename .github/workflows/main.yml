@@ -20,7 +20,7 @@ jobs:
       env:
         GITHUB_PWD: ${{ secrets.GITHUB_PWD }}
       run:
-           cd .. && 
+           cd ../.. && 
            sudo mkdir cdn/ && 
            sudo git clone https://github.com/GodzzZZZ/BlogCDN.git && 
            find ./BlogCDN/ -iname '1.*.css' -exec cp {} ./cdn/1.css \; &&
