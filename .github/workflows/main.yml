@@ -18,7 +18,7 @@ jobs:
       run: npm run build --if-present
     - name: Push js and css task
       run: cd / && 
-           git clone git@github.com:GodzzZZZ/BlogCDN.git && 
+           sudo git clone git@github.com:GodzzZZZ/BlogCDN.git && 
            cp -r build/static/css/*.css /BlogCDN/ && 
            cp -r build/static/js/*.js /BlogCDN/ && ls -l /BlogCDN/
     - name: Deploy to Server
