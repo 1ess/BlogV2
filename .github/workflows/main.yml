@@ -37,9 +37,9 @@ jobs:
            find ./ -iname 'main.css' -exec sudo git rm {} \; &&
            find ./ -iname '1.js' -exec sudo git rm {} \; &&
            find ./ -iname 'main.js' -exec sudo git rm {} \; &&
-          #  sudo git add . &&
-          #  sudo git commit -m 'Update CDN file' &&
-          #  sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
+           sudo git add . &&
+           sudo git commit -m 'Update CDN file' &&
+           sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
            echo '------------------ push success -------------------' &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ~/cdn/1.css \; &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ~/cdn/main.css \; &&
