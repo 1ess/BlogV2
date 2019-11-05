@@ -24,7 +24,7 @@ jobs:
            find /BlogCDN/ -iname 'main.*.css' -exec cp {} /cdn/main.css \; &&
            find /BlogCDN/ -iname '1.*.js' -exec cp {} /cdn/1.js \; &&
            find /BlogCDN/ -iname 'main.*.js' -exec cp {} /cdn/main.js \; &&
-           sudo rm -rf /BlogCDN/*
+           sudo rm /BlogCDN/*
            mv /cdn/* /BlogCDN/
            ls -l /BlogCDN/
     - name: Deploy to Server
