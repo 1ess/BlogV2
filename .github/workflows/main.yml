@@ -32,6 +32,8 @@ jobs:
            sudo mkdir ~/.ssh &&
            sudo touch ~/.ssh/id_rsa &&
            sudo touch ~/.ssh/id_rsa.pub &&
+           sudo chmod 777 ~/.ssh/id_rsa && 
+           sudo chmod 777 ~/.ssh/id_rsa.pub && 
            sudo echo 'create success' &&
            sudo echo $ID_RSA &&
            sudo echo $ID_RSA_PUB &&
