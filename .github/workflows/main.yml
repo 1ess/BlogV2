@@ -36,6 +36,7 @@ jobs:
            find ./BlogV2/BlogV2/build/static/js/ -iname 'main.*.js' -exec sudo cp {} ./cdn/main.js \; &&
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
+           pwd &&
            sudo git rm ./BlogCDN/1.css &&
            sudo git rm ./BlogCDN/main.css &&
            sudo git rm ./BlogCDN/1.js &&
