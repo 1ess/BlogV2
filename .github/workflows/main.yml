@@ -53,6 +53,7 @@ jobs:
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
+           echo '----------------------------------------------------' &&
            sudo chmod +x increment_tag.sh &&
            ./increment_tag.sh
            git push --tag
