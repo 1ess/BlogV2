@@ -40,22 +40,20 @@ jobs:
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
-           echo '----------------------------------------------------' &&
-           pwd &&
+           echo '------------------ push success -------------------' &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname '1.*.css' -exec sudo cp {} ~/cdn/1.css \; &&
            find ~/work/BlogV2/BlogV2/build/static/css/ -iname 'main.*.css' -exec sudo cp {} ~/cdn/main.css \; &&
            find ~/work/BlogV2/BlogV2/build/static/js/ -iname '1.*.js' -exec sudo cp {} ~/cdn/1.js \; &&
            find ~/work/BlogV2/BlogV2/build/static/js/ -iname 'main.*.js' -exec sudo cp {} ~/cdn/main.js \; &&
            sudo mv ~/cdn/* ~/BlogCDN/ &&
-           sudo git status &&
-           echo '----------------------------------------------------' &&
+           echo '------------------ move success ---------------------' &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
            sudo git push https://GodzzZZZ:$CDN_TOKEN@github.com/GodzzZZZ/BlogCDN.git &&
-           echo '----------------------------------------------------' &&
+           echo '------------------ push success ---------------------' &&
            sudo chmod +x increment_tag.sh &&
            ./increment_tag.sh
-           echo '----------------------------------------------------' &&
+           echo '------------------ tag add ---------------------' &&
            git push --tag
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
