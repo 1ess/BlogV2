@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
     - name: Install Node.js
       uses: actions/setup-node@master
     - name: Install npm dependencies
@@ -33,7 +40,7 @@ jobs:
            git config --global user.name "GodzzZZZ" && 
            git config --global user.email "godzzzzz@qq.com" &&
            cd ./BlogCDN/ &&
-           sudo git status &&1
+           sudo git status &&
            ls -la &&
            sudo git add . &&
            sudo git commit -m 'Update CDN file' &&
