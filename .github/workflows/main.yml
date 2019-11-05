@@ -19,8 +19,12 @@ jobs:
     - name: Push js and css task
       run: cd / && 
            sudo git clone git@github.com:GodzzZZZ/BlogCDN.git && 
-           cp -r build/static/css/*.css /BlogCDN/ && 
-           cp -r build/static/js/*.js /BlogCDN/ && ls -l /BlogCDN/
+           sudo rm -rf /BlogCDN/*
+           find /BlogCDN/ -iname '1.*.css' -exec cp {} ./1.css \; &&
+           find /BlogCDN/ -iname 'main.*.css' -exec cp {} ./main.css \; &&
+           find /BlogCDN/ -iname '1.*.js' -exec cp {} ./1.js \; &&
+           find /BlogCDN/ -iname 'main.*.js' -exec cp {} ./main.js \; &&
+           ls -l /BlogCDN/
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
       env:
