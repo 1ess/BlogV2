@@ -13,7 +13,7 @@ export default class NavLinks extends Component {
                     title: `Home`
                 },
                 {
-                    link: `/blog/2018`,
+                    link: `/blog/`+ new Date().getFullYear(),
                     title: `Blog`
                 },
                 {
