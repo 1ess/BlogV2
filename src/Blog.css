@@ -52,3 +52,16 @@ print {
 .markdown-content {
     background: #2b303b;
 }
+
+.beian-ul {
+    padding-left: 0;
+    list-style: none !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+}
+
+.beian {
+    font-size: 0.75rem;
+    color: #bbb !important;
+    text-decoration: none;
+}
