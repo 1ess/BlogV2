@@ -1,6 +1,6 @@
 ## A Sort Of A Blog
 <p align="left">
-  <a href="https://github.com/GodzzZZZ/BlogV2"><img alt="GitHub Actions status" src="https://github.com/GodzzZZZ/BlogV2/workflows/main/badge.svg"></a>
+  <a href="https://github.com/GodzzZZZ/BlogV2"><img src="https://github.com/GodzzZZZ/BlogV2/workflows/Build%20And%20Deploy%20to%20Server/badge.svg"></a>
 </p>
 Blog 源码！
 
