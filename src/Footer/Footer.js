@@ -17,7 +17,7 @@ export default class Footer extends Component {
 											<div className="column is-7">											
 												<p className="beian">粤ICP备19130368号-1</p>												
 												<p className="beian"><span className ="emoji" role ="img" aria-label="heart">❤</span>️如果五分钟后她必须进安检，如果安检在十米之外，那意味着，你们可以亲吻四分五十秒。</p>
-												<p className="beian">©2018-2019 GodzzZZZ. All rights reserved.</p>
+												<p className="beian">{`©2018-${new Date().getFullYear()} GodzzZZZ. All rights reserved.`}</p>
 											</div>
 										</div>
 									</div>
