@@ -41,7 +41,7 @@ export default class Info extends Component {
                                             <div className="extract has-text-grey-light">Extract!</div>
                                             <img className="scan-qrcode bd-drawing" src={scan} alt="" />
                                         </div>
-                                        <div className="wechat-container column is-size-2-desktop is-size-3  bd-rainbow shadowpower2">
+                                        <div className="wechat-container column is-size-2-desktop is-size-3 bd-rainbow shadowpower2">
                                             <img className="wechat-image" src={wechat} alt="" />
                                         </div>
                                     </div>
