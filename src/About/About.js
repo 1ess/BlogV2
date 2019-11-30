@@ -58,7 +58,7 @@ export default class About extends Component {
                 <section className="hero is-medium">
                     <div className="hero-body">
                         <div className="container">
-                            <div className="columns is-vcentered container-padding-top">
+                            <div className="columns is-vcentered">
                                 <BaseInfo />
                                 <Skills />
                             </div>
