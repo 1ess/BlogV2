@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-
-import scan from '../scan-qrcode.png';
+import { init } from 'ityped';
 import wechat from '../wechat.jpg';
 
 export default class Info extends Component {
+    componentDidMount() {
+      const extract = document.querySelector('#extract');
+      init(extract, { 
+          showCursor: false, 
+          strings: ['撩我吧!'], 
+          loop: true,
+          typeSpeed: 120,
+          backSpeed: 80 });
+    }
+    
     render() {
       return (
         <section className="hero is-medium">
@@ -38,8 +47,7 @@ export default class Info extends Component {
                                             </p>
                                         </div>
                                         <div className="column is-size-3-desktop is-size-2 scan-qrcode">
-                                            <div className="extract has-text-grey-light">Extract!</div>
-                                            <img className="scan-qrcode bd-drawing" src={scan} alt="" />
+                                            <div id="extract" className="extract has-text-grey-light"></div>
                                         </div>
                                         <div className="wechat-container column is-size-2-desktop is-size-3 bd-rainbow shadowpower2">
                                             <img className="wechat-image" src={wechat} alt="" />
