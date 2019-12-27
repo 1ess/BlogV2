@@ -4,7 +4,7 @@ import NavLinks from '../NavLinks/NavLinks';
 import burger from '../ev';
 
 import '../App.css';
-import icon from '../icon.jpg';
+import icon from '../icon.png';
 
 const Nav = ({ selectedIndex }) => (
     <div className="navbar-menu" id="mainNav">
