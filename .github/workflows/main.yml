@@ -31,4 +31,4 @@ jobs:
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: "/root/nginx/html/blog/"
+          TARGET: ${{ secrets.REMOTE_TARGET }}
