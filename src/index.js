@@ -12,15 +12,28 @@ import ErrorPage from './Error/Error';
 
 import './index.css';
 
+// generateYearList = length => {
+//     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
+// }
+
+function generateYearList(length) {
+    return Array.from({ length: length }, (v, i) => `${i + 2018}`);
+}
+
+const currentYear = new Date().getFullYear();
+const i = currentYear - 2017;
+const list = generateYearList(i);
+const years = list.join('|');
+
 ReactDOM.render((
     <Router>
         <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/about" component={About}/>
-            <Route exact path="/blog/:year(2018|2019)" component={Blog} />
-            <Route exact path="/blog/:year(2018|2019)/:id" component={BlogPage} />
+            <Route exact path={`/blog/:year(${years})`} component={Blog} />
+            <Route exact path={`/blog/:year(${years})/:id`} component={BlogPage} />
             <Route exact path="/blog/archive" component={BlogArchive} />
-            <Route exact path="/blog/archive/:year(2018|2019)/:id" component={BlogPage} />
+            <Route exact path={`/blog/archive/:year(${years})/:id`} component={BlogPage} />
             <Route exact path="/blog/app/:id" component={AppBlogDetail} />
             <Route component={ErrorPage} />
         </Switch>
