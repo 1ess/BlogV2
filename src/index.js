@@ -12,10 +12,6 @@ import ErrorPage from './Error/Error';
 
 import './index.css';
 
-// generateYearList = length => {
-//     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
-// }
-
 function generateYearList(length) {
     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
 }
