@@ -32,3 +32,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
+      script: |
+              curl https://sc.ftqq.com/${{ secrets.SERVER_CHAN_KEY }}.send?text=主人BlogAction完成啦~
