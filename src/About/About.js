@@ -10,16 +10,16 @@ const BaseInfo = () => (
         <p className={`is-title`}>一个"爱做梦的"</p>
         <p className={`base-info is-gray`}>利用自己的技术，让生活更加美好</p>
 
-        <p className={`is-title`}>一个"敲代码的"</p>
-        <p className={`base-info is-gray`}>Objective-C & C# & JavaScript & Python</p>
-
         <p className={`is-title`}>一个"搞设计的"</p>
-        <p className={`base-info is-gray`}>将灵感变为现实</p>
+        <p className={`base-info is-gray`}>将灵感变为画面</p>
+
+        <p className={`is-title`}>一个"敲代码的"</p>
+        <p className={`base-info is-gray`}>将画面变为现实</p>
 
         <p className={`is-title`}>一个"写废话的"</p>
         <p className={`base-info is-gray`}>再回首，恍然如梦</p>
 
-        <p className={`is-title`}>我叫张冬冬，一个生于 92 年的程序猿</p>
+        <p className={`is-title`}>一个生于 92 年的程序猿</p>
     </div>
 )
 
@@ -38,7 +38,7 @@ const Skills = () => (
         <p className={`is-title`}>后端框架</p>
         <p className={`base-info is-gray`}>ASP.Net (Core)</p>
 
-        <p className={`is-title`}>正在不断寻找任何有趣的技术 ing</p>
+        <p className={`is-title`}>不断追寻着梦想！！！</p>
         
     </div>
 )
