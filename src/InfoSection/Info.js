@@ -18,11 +18,8 @@ const Summary = ({blog_link}) => (
                 <Introduction className={`is-success`} introduction={` Open Source Activist `} />.
             </p>
             <p>
-                you can follow me on <span className={`shadow is-warning`}><a href="https://twitter.com/Julthcsd"> Twitter</a></span> for more up-to-date content.
-            </p>
-            <p>
-                If you happen to speak Chinese, my Chinese name is 张冬冬. you can also find me on 
-                <span className={`shadow is-danger`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span>.
+                If you happen to speak Chinese, you can also find me on 
+                <span className={`shadow is-danger`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span> for more up-to-date content.
             </p>
             <p>
                 Outside of programming, I enjoy video games and going on a road trip.

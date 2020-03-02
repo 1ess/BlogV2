@@ -13623,28 +13623,33 @@ print {
 }
 
 .shadow.is-danger {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .2);
-  box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .2)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .7);
+  box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .7)
 }
 
 .shadow.is-warning {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .2);
-  box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .2)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .7);
+  box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .7)
 }
 
 .shadow.is-success {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .2);
-  box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .2)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .7);
+  box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .7)
 }
 
 .shadow.is-turquoise {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .2);
-  box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .2)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .7);
+  box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .7)
 }
 
 .shadow.is-purple {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .2);
-  box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .2)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .7);
+  box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .7)
+}
+
+.shadow.is-follow {
+  -webkit-box-shadow: inset 0 -6px 0 rgba(82, 82, 136, .7);
+  box-shadow: inset 0 -6px 0 rgba(82, 82, 136, .7)
 }
 
 .hello {
