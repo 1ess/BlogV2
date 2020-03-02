@@ -10,8 +10,7 @@ const Introduction = ({className = '', introduction}) => (
 const Summary = ({blog_link}) => (
     <div className="column is-half">
         <div className="content hello">
-            <h3>Hello.</h3>
-            <h4>My name is Stephen Chang.</h4>
+            <h4>Hello. My name is Stephen Chang.</h4>
             <p>I'm a
                 <Introduction className={`is-danger`} introduction={` Programmer `} />、
                 <Introduction className={`is-warning`} introduction={` Blogger `} /> and
