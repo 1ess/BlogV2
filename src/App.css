@@ -191,7 +191,7 @@ span {
 }
 
 strong {
-  color: #0470DC;
+  color: #144a74;
   padding: 0 0.2rem;
 }
 
@@ -5510,7 +5510,7 @@ a.tag:hover {
 .breadcrumb a {
   -ms-flex-align: center;
   align-items: center;
-  color: #998da0;
+  color: #777879;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -13731,7 +13731,7 @@ a strong {
 }
 
 .sharp-num {
-  color: rgba(153,141,160,0.25);
+  color: #596979;
 }
 
 .panic-item {
@@ -13754,13 +13754,9 @@ a.archive-item {
   color: #463853;
 }
 
-a.archive-item:hover {
-  color: #272829;
-}
-
 .panic-title {
   margin-bottom: 0 !important ;
-  color: #998da0;
+  color: #596979;
 }
 
 .panic-subtitle {
