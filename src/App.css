@@ -1915,14 +1915,14 @@ a.box:active {
 
 .button.is-primary.is-outlined {
   background-color: transparent;
-  border-color: #8e51c7;
-  color: #8e51c7
+  border-color: #463853;
+  color: #463853
 }
 
 .button.is-primary.is-outlined:hover,
 .button.is-primary.is-outlined:focus {
-  background-color: #8e51c7;
-  border-color: #8e51c7;
+  background-color: #463853;
+  border-color: #463853;
   color: #fff
 }
 
@@ -5609,7 +5609,7 @@ a.tag:hover {
 .card {
   background-color: transparent;
   box-shadow: none;
-  color: #998da0;
+  color: #463853;
   max-width: 100%;
   position: relative
 }
@@ -6018,7 +6018,7 @@ print {
 }
 
 .menu-list a.is-active {
-  background-color: #998da0;
+  background-color: #463853;
   color: #fff
 }
 
@@ -13889,7 +13889,7 @@ print {
 }
 
 .is-gray {
-  color: #ccc;
+  color: #171819;
 }
 
 @media screen and (min-width:769px) {

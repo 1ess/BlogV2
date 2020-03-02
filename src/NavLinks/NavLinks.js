@@ -19,10 +19,6 @@ export default class NavLinks extends Component {
                 {
                     link: `/blog/archive`,
                     title: `Archive`
-                },
-                {
-                    link: `/about`,
-                    title: `About`
                 }
             ]
         }
