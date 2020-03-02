@@ -2256,6 +2256,12 @@ a.box:active {
   color: #fff
 }
 
+.button.is-following {
+  background-color: #4FC08D;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.5)
+}
+
 .button.is-warning {
   background-color: #ffdd57;
   border-color: transparent;
@@ -13656,7 +13662,13 @@ hr {
 
 .content a:not(.button) {
   text-decoration: none;
-  color: #459522
+  color: #4FC08D
+}
+
+.content .follow {
+  background-color: #4FC08D;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.5)
 }
 
 @media screen and (max-width:768px),
