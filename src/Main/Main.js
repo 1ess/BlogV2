@@ -13,8 +13,6 @@ export default class Main extends Component {
 			<main className="app-content has-background">
 				<Info blog_link={`/blog/2018`} />
 				<Line />
-				<Contribution />
-				<Line />
 				<Wechat />
 			</main>
 		);
