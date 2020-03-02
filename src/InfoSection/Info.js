@@ -19,7 +19,7 @@ const Summary = ({blog_link}) => (
             </p>
             <p>
                 If you happen to speak Chinese, you can also find me on 
-                <span className={`shadow is-danger`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span> for more up-to-date content.
+                <span className={`shadow is-follow`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span> for more up-to-date content.
             </p>
             <p>
                 Outside of programming, I enjoy video games and going on a road trip.
