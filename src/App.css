@@ -5519,7 +5519,7 @@ a.tag:hover {
 }
 
 .breadcrumb a:hover {
-  color: #8e51c7
+  color: #131415
 }
 
 .breadcrumb li {
@@ -13750,8 +13750,12 @@ a strong {
   background: #f6f6f6;
 }
 
+a.archive-item {
+  color: #463853;
+}
+
 a.archive-item:hover {
-  color: #998da0;
+  color: #272829;
 }
 
 .panic-title {
