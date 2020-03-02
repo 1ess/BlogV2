@@ -13662,13 +13662,12 @@ hr {
 
 .content a:not(.button) {
   text-decoration: none;
-  color: #4FC08D
+  color: #121314
 }
 
-.content .follow {
-  background-color: #4FC08D;
-  border-color: transparent;
-  color: rgba(0, 0, 0, 0.5)
+.hello p {
+  color: #121314;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
 @media screen and (max-width:768px),

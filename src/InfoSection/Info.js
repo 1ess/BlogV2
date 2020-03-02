@@ -10,29 +10,22 @@ const Introduction = ({className = '', introduction}) => (
 const Summary = ({blog_link}) => (
     <div className="column is-half">
         <div className="content hello">
-            <h2>Hello.</h2>
-            <h3>My name is Stephen Chang.</h3>
+            <h3>Hello.</h3>
+            <h4>My name is Stephen Chang.</h4>
             <p>I'm a
                 <Introduction className={`is-danger`} introduction={` Programmer `} />、
                 <Introduction className={`is-warning`} introduction={` Blogger `} /> and
                 <Introduction className={`is-success`} introduction={` Open Source Activist `} />.
             </p>
             <p>
-                you can follow me on Twitter for more up-to-date content.
+                you can follow me on <span className={`shadow is-warning`}><a href="https://twitter.com/Julthcsd"> Twitter</a></span> for more up-to-date content.
             </p>
             <p>
-                If you happen to speak Chinese, my Chinese name is 张冬冬. you can also find me on 知乎.
+                If you happen to speak Chinese, my Chinese name is 张冬冬. you can also find me on 
+                <span className={`shadow is-danger`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span>.
             </p>
             <p>
                 Outside of programming, I enjoy video games and going on a road trip.
-            </p>
-            <p>
-                Find me on
-                <a className={`follow`} href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a>
-                ,
-                <a className={`follow`} href="https://github.com/GodzzZZZ"> GitHub </a>
-                or
-                <Link to={blog_link}> Blog</Link>.
             </p>
         </div>
     </div>
