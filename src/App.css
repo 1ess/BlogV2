@@ -13703,7 +13703,7 @@ print {
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding: 3rem 1.5rem
+  padding: 0 1.5rem 3rem 1.5rem
 }
 
 .hero {
