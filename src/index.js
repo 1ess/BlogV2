@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import App from './App';
-import About from './About/About';
 import Blog from './Blog/Blog';
 import BlogPage from './BlogPage/BlogPage';
 import BlogArchive from './BlogArchive/BlogArchive';
@@ -37,8 +36,8 @@ ReactDOM.render((
 
 document.addEventListener('visibilitychange', function() {
     const isHidden = document.hidden;
-    const originTitile = document.title;
-    const title = originTitile.substring(2).trim();
+    const originTitle = document.title;
+    const title = originTitle.substring(2).trim();
     document.title = (isHidden ?  "💔 " :  "❤️ ") + title
 });
 
