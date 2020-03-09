@@ -13583,9 +13583,14 @@ print {
   overflow: hidden
 }
 
+.hello .content a:not(.button) {
+  text-decoration: none;
+  color: #32645a
+}
+
 .content a:not(.button) {
   text-decoration: underline;
-  color: #88d8b0
+  color: #32645a
 }
 
 @media(min-width:769px) {
