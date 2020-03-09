@@ -191,7 +191,7 @@ span {
 }
 
 strong {
-  color: #144a74;
+  color: #ff6f69;
   padding: 0 0.2rem;
 }
 
@@ -13585,7 +13585,7 @@ print {
 
 .content a:not(.button) {
   text-decoration: underline;
-  color: #459522
+  color: #88d8b0
 }
 
 @media(min-width:769px) {
@@ -13665,10 +13665,10 @@ hr {
   margin: 1.5rem 0
 }
 
-.content a:not(.button) {
+/* .content a:not(.button) {
   text-decoration: none;
   color: #121314
-}
+} */
 
 .hello p {
   color: #121314;
