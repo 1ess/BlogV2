@@ -13583,7 +13583,7 @@ print {
   overflow: hidden
 }
 
-.hello .content a:not(.button) {
+.content p a:not(.button) {
   text-decoration: none;
   color: #32645a
 }
