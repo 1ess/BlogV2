@@ -13585,12 +13585,12 @@ print {
 
 .content p a:not(.button) {
   text-decoration: none;
-  color: #32645a
+  color: #c05b4d
 }
 
 .content a:not(.button) {
   text-decoration: underline;
-  color: #32645a
+  color: #c05b4d
 }
 
 @media(min-width:769px) {
