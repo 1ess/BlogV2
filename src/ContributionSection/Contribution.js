@@ -25,25 +25,25 @@ export default class Contribution extends Component {
                 "symbol": `📝`,
                 "slogan": `一个集成简单，交互效果不错的图片浏览器`,
                 "project_name": `MFPictureBrowser`,
-                "project_link": `https://github.com/GodzzZZZ/MFPictureBrowser`
+                "project_link": `https://github.com/1ess/MFPictureBrowser`
             },
             {
                 "symbol": `🍰`,
                 "slogan": `类似于 Cosmos 应用的 HUD 效果，轻量简便`,
                 "project_name": `MFHUDManager`,
-                "project_link": `https://github.com/GodzzZZZ/MFHUDManager`
+                "project_link": `https://github.com/1ess/MFHUDManager`
             },
             {
                 "symbol": `🐨`,
                 "slogan": `从图片中自动提取显著的颜色，柔和且高性能`,
                 "project_name": `MFExtractColor`,
-                "project_link": `https://github.com/GodzzZZZ/MFExtractColor`
+                "project_link": `https://github.com/1ess/MFExtractColor`
             },
             {
                 "symbol": `❤️`,
                 "slogan": `基于 AFNetworking 的网络库，自定义强大`,
                 "project_name": `MFNetworkManager`,
-                "project_link": `https://github.com/GodzzZZZ/MFNetworkManager`
+                "project_link": `https://github.com/1ess/MFNetworkManager`
             }
         ]};
     }
