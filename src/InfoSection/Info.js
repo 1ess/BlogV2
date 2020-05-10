@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
 
-import messageImg from '../message-img.jpg';
-
 const Introduction = ({className = '', introduction}) => (
     <span className={(`shadow ${className}`).trim()}>{introduction}</span>
 )
 
 const Summary = ({blog_link}) => (
-    <div className="column is-half">
+    <div className="column is-7">
         <div className="content hello">
-            <h4>Hello. My name is Stephen Chang.</h4>
+            <h2>Hello.</h2>
+            <h4>My name is Stephen Chang.</h4>
             <p>I'm a
-                <Introduction className={`is-danger`} introduction={` Programmer `} />、
-                <Introduction className={`is-warning`} introduction={` Blogger `} /> and
-                <Introduction className={`is-success`} introduction={` Open Source Activist `} />.
+                <Introduction introduction={` `} />
+                <Introduction className={`is-danger`} introduction={`software developer`} />、
+                <Introduction className={`is-danger`} introduction={`blogger`} /> and 
+                <Introduction introduction={` `} />
+                <Introduction className={`is-danger`} introduction={`open source activist`} />.
             </p>
             <p>
                 If you happen to speak Chinese, you can also find me on 
-                <span className={`shadow is-follow`}><a href="https://www.zhihu.com/people/19921213/answers"> Zhihu</a></span> for more up-to-date content.
+                <a className={`zhihu-link`} href="https://www.zhihu.com/people/19921213/answers"> 知乎</a> or <a className={`weibo-link`} href="https://weibo.com/fee1dead">微博</a> for more up-to-date content.
             </p>
             <p>
-                Outside of programming, I enjoy video games and going on a road trip.
+                Outside of programming, I enjoy staying with my wife and going on a road trip.
             </p>
-        </div>
-    </div>
-)
-
-const Picture = () => (
-    <div className="column is-5 is-offset-1">
-        <div id="messages" className="messages">
-            <div className="message is-shown">
-                <img className="message-img" src={messageImg} alt={``} />
-            </div>
         </div>
     </div>
 )
@@ -45,7 +36,6 @@ export default class Info extends Component {
                     <div className="container">
                         <div className="columns is-vcentered">
                             <Summary blog_link={blog_link} />
-                            <Picture />
                         </div>
                     </div>
                 </div>

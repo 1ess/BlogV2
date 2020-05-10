@@ -1,5 +1,4 @@
 
-/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
       transform: rotate(0deg)
@@ -10,7 +9,6 @@
   }
 }
 
-/*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
 p,
@@ -196,7 +194,6 @@ strong {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  /* background-color: #fbfbfd; */
   color: #998da0;
   font-size: .875em;
   overflow-x: auto;
@@ -13627,38 +13624,12 @@ print {
 }
 
 .shadow.is-danger {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .7);
-  box-shadow: inset 0 -6px 0 rgba(255, 74, 110, .7)
-}
-
-.shadow.is-warning {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .7);
-  box-shadow: inset 0 -6px 0 rgba(255, 221, 87, .7)
-}
-
-.shadow.is-success {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .7);
-  box-shadow: inset 0 -6px 0 rgba(35, 209, 153, .7)
-}
-
-.shadow.is-turquoise {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .7);
-  box-shadow: inset 0 -6px 0 rgba(36, 177, 209, .7)
-}
-
-.shadow.is-purple {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .7);
-  box-shadow: inset 0 -6px 0 rgba(44, 34, 116, .7)
-}
-
-.shadow.is-follow {
-  -webkit-box-shadow: inset 0 -6px 0 rgba(82, 82, 136, .7);
-  box-shadow: inset 0 -6px 0 rgba(82, 82, 136, .7)
+  -webkit-box-shadow: inset 0 -6px 0 rgba(79,192,141,0.5);;
+  box-shadow: inset 0 -10px 0 rgba(79,192,141,0.5);
 }
 
 .hello {
   font-size: 1.5rem;
-  max-width: 17em
 }
 
 hr {
@@ -13668,11 +13639,6 @@ hr {
   height: 2px;
   margin: 1.5rem 0
 }
-
-/* .content a:not(.button) {
-  text-decoration: none;
-  color: #121314
-} */
 
 .hello p {
   color: #121314;
@@ -13894,6 +13860,14 @@ print {
 
 .is-gray {
   color: #171819;
+}
+
+.content p a.zhihu-link {
+  color: #175199;
+}
+
+.content p a.weibo-link {
+  color: #eb7350;
 }
 
 @media screen and (min-width:769px) {
