@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-
-import Header from './Header/Header';
-import Main from './Main/Main';
-import Footer from './Footer/Footer';
-
+import React, { Component, Suspense } from 'react';
 import './App.css';
+import Header from './Header/Header';
+
+const Main = React.lazy(() => import("./Main/Main"));
+const Footer = React.lazy(() => import("./Footer/Footer"));
 
 export default class App extends Component {
 
@@ -17,8 +16,11 @@ export default class App extends Component {
 		return (
 		<div ref={node => this.node = node} className="app-container">
 			<Header symbol={`❤️`} selectedIndex={0} />
-			<Main />
-			<Footer />
+			<Suspense fallback={<div></div>}>
+				<Main />
+				<Footer />
+			</Suspense>
+			
 		</div>
 		);
 	}

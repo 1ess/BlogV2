@@ -41,7 +41,7 @@ export default class Header extends Component {
     }
 
     render() {
-      const { symbol, selectedIndex } = this.props;
+        const { symbol, selectedIndex } = this.props;
 
         return (
             <header className="app-header">

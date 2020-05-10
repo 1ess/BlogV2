@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './index.css';
 
 import App from './App';
 import Blog from './Blog/Blog';
@@ -8,8 +9,6 @@ import BlogPage from './BlogPage/BlogPage';
 import BlogArchive from './BlogArchive/BlogArchive';
 import AppBlogDetail from './AppBlogDetail/AppBlogDetail';
 import ErrorPage from './Error/Error';
-
-import './index.css';
 
 function generateYearList(length) {
     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
@@ -30,7 +29,7 @@ ReactDOM.render((
             <Route exact path={`/blog/archive/:year(${years})/:id`} component={BlogPage} />
             <Route exact path="/blog/app/:id" component={AppBlogDetail} />
             <Route component={ErrorPage} />
-        </Switch>
+        </Switch>    
     </Router>
 ), document.getElementById('root'));
 

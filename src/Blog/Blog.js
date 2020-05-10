@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 import Header from '../Header/Header';
-import BlogContainer from '../BlogContainer/BlogContainer';
+
+const BlogContainer = React.lazy(() => import("../BlogContainer/BlogContainer"));
 
 export default class Blog extends Component {
 
@@ -29,7 +30,9 @@ export default class Blog extends Component {
 		return (
 			<div ref={node => this.node = node} className={`app-container`}>
 				<Header symbol={`❤️`} selectedIndex={1} />
-				<BlogContainer year={year} handleYearChange={this.handleYearChange} />
+				<Suspense fallback={<div>Loading...</div>}>
+					<BlogContainer year={year} handleYearChange={this.handleYearChange} />
+                </Suspense>
 			</div>
 		);
 	}
