@@ -47,7 +47,7 @@ export default class BlogArchive extends Component {
         return (                
             <div ref={node => this.node = node} className={`app-container`}>
                 <Header symbol={`❤️`} selectedIndex={2} />
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<div></div>}>
                     <BlogArchiveContainer loading={loading} error={error} items={items} />
                 </Suspense>
             </div>
