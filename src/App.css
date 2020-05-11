@@ -13870,6 +13870,10 @@ print {
   color: #121314;
 }
 
+#sort-blog {
+  color: #463853;
+}
+
 @media screen and (min-width:769px) {
   .container-padding-top {
     padding-top: 5rem;

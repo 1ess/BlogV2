@@ -19,7 +19,7 @@ const Nav = ({ selectedIndex }) => (
 const NavBrand = ({icon, symbol})=> (
     <div className="navbar-brand">
         <div className="brand">
-            <div className="navbar-item">
+            <div className="navbar-item" id={`sort-blog`}>
                 <div className="brand-icon">
                     <img className="present-icon" role="presentation" src={icon} alt="icon" />
                 </div>

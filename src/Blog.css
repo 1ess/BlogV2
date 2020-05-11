@@ -62,6 +62,6 @@ print {
 
 .beian {
     font-size: 0.75rem;
-    color: #bbb !important;
+    color: #666 !important;
     text-decoration: none;
 }
