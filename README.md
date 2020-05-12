@@ -2,7 +2,6 @@
 <p align="left">
   <a href="https://github.com/1ess/BlogV2"><img src="https://github.com/1ess/BlogV2/workflows/Build%20And%20Deploy%20to%20Server/badge.svg"></a>
 </p>
-Blog 源码！
 
 ## 😡 勘误
 
