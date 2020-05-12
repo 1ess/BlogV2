@@ -26,9 +26,9 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
     - name: Sending message
-        uses: yakumioto/serverchan-action@v1
-        with:
-          key: ${{ secrets.SERVER_CHAN_KEY }}
-          text: 部署成功
-          desp: 谁终将声震人间, 必长久深自缄默。谁终将点燃闪电, 必长久如云飘泊。
+      uses: yakumioto/serverchan-action@v1
+      with:
+        key: ${{ secrets.SERVER_CHAN_KEY }}
+        text: 部署成功
+        desp: 谁终将声震人间, 必长久深自缄默。谁终将点燃闪电, 必长久如云飘泊。
       
