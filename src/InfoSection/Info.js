@@ -11,8 +11,9 @@ const Summary = ({blog_link}) => (
             <h4>My name is Stephen Chang.</h4>
             <p>I'm a
                 <Introduction introduction={` `} />
-                <Introduction className={`is-danger`} introduction={`software developer`} />、
-                <Introduction className={`is-danger`} introduction={`blogger`} /> and 
+                <Introduction className={`is-danger`} introduction={`developer`} />、
+                <Introduction className={`is-danger`} introduction={`blogger`} />、
+                <Introduction className={`is-danger`} introduction={`vimer`} /> and 
                 <Introduction introduction={` `} />
                 <Introduction className={`is-danger`} introduction={`open source activist`} />.
             </p>
