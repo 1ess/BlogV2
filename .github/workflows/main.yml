@@ -25,10 +25,8 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-    - name: Sending message
-      uses: yakumioto/serverchan-action@v1
-      with:
-        key: ${{ secrets.SERVER_CHAN_KEY }}
-        text: 部署成功
-        desp: 谁终将声震人间, 必长久深自缄默。谁终将点燃闪电, 必长久如云飘泊。
-      
+    - name: Send Push Notification
+      uses: techulus/push-github-action@1.0.0
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
+        MESSAGE: "谁终将声震人间, 必长久深自缄默。谁终将点燃闪电, 必长久如云飘泊。"
