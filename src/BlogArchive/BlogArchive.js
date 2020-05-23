@@ -20,7 +20,7 @@ export default class BlogArchive extends Component {
     }
 
     componentDidMount() {
-        document.title = " ❤️ Archive";
+        document.title = "Archive";
         this.node.scrollIntoView();
         const self = this;
         axios({

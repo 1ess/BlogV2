@@ -26,7 +26,7 @@ export default class BlogPage extends Component {
 
     componentDidMount() {
         this._isMounted = true;
-        document.title = " ❤️ Blog";
+        document.title = "Blog";
         const {id} = this.props.match.params;
         this.node.scrollIntoView();
         const self = this;
@@ -38,7 +38,7 @@ export default class BlogPage extends Component {
             if (self._isMounted) {
                 if (!response.data.result.code) {
                     const detail = response.data.detail;
-                    document.title = ` ❤️ ${detail.title}`;
+                    document.title = `${detail.title}`;
                     self.setState({
                         title: detail.title,
                         content: detail.content

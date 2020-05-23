@@ -7,14 +7,14 @@ import '../Blog.css';
 export default class YearIndex extends Component {
 
     componentDidMount = () => {
-        document.title =  `❤️ ${this.props.year}`;
+        document.title =  `${this.props.year}`;
     }
     
 
     handleClick = e => {
         const {handleYearClick, currentYear} = this.props;
         const year = e.target.text;
-        document.title =  `❤️ ${year}`;
+        document.title =  `${year}`;
         if (currentYear === year) {
             return;
         }

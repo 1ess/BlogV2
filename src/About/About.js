@@ -46,7 +46,7 @@ const Skills = () => (
 export default class About extends Component {
 
 	componentDidMount() {
-		document.title = " ❤️ About Me";
+		document.title = "About Me";
 		this.node.scrollIntoView();
 	}
 
