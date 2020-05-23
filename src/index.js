@@ -33,13 +33,6 @@ ReactDOM.render((
     </Router>
 ), document.getElementById('root'));
 
-document.addEventListener('visibilitychange', function() {
-    const isHidden = document.hidden;
-    const originTitle = document.title;
-    const title = originTitle.substring(2).trim();
-    document.title = (isHidden ?  "💔 " :  "❤️ ") + title
-});
-
 function getMultiLine(lines) {
     lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));
     return lines;
