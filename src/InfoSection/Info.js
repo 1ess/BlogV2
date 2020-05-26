@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import messageImg from '../undraw_hacker_mind.png';
 
 const Introduction = ({className = '', introduction}) => (
     <span className={(`shadow ${className}`).trim()}>{introduction}</span>
 )
 
 const Summary = ({blog_link}) => (
-    <div className="column is-7">
+    <div className="column is-6">
         <div className="content hello">
             <h2>Hello.</h2>
             <h4>My name is Stephen Chang.</h4>
@@ -28,6 +29,16 @@ const Summary = ({blog_link}) => (
     </div>
 )
 
+const Picture = () => (
+    <div className="column is-5 is-offset-1">
+        <div id="messages" className="messages">
+            <div className="message is-shown">
+                <img className="message-img" src={messageImg} alt={``} />
+            </div>
+        </div>
+    </div>
+)
+
 export default class Info extends Component {
     render() {
         const { blog_link } = this.props;
@@ -37,6 +48,7 @@ export default class Info extends Component {
                     <div className="container">
                         <div className="columns is-vcentered">
                             <Summary blog_link={blog_link} />
+                            <Picture />
                         </div>
                     </div>
                 </div>
