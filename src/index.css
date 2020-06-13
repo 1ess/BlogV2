@@ -12,12 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-@font-face {
-  font-family: '1essFont';
-  src: local('1essFont'), url(./Font/blog.woff2) format('woff');
+  
+body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, code, pre {
+  font-family: '1essfont' !important;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, code, pre {
-  font-family: '1essFont' !important;
+.wf-active {
+  font-family: '1essfont' !important;
 }

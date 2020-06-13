@@ -14,7 +14,8 @@
     "react-scripts": "2.1.1",
     "react-toastify": "^4.4.3",
     "react-transition-group": "^1.2.1",
-    "vanilla-lazyload": "^8.17.0"
+    "vanilla-lazyload": "^8.17.0",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
