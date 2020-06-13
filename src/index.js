@@ -10,6 +10,7 @@ import BlogArchive from './BlogArchive/BlogArchive';
 import AppBlogDetail from './AppBlogDetail/AppBlogDetail';
 import ErrorPage from './Error/Error';
 
+import './Font/blog.woff2'
 function generateYearList(length) {
     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
 }
