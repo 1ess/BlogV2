@@ -41,10 +41,7 @@ WebFont.load({
         '/font/font.css',
       ]
     },
-    timeout: 5000,
-    fontactive: function(familyName, fvd) {
-        console.warn(familyName);
-    },
+    timeout: 5000
   });
 
 function getMultiLine(lines) {
