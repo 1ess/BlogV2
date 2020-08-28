@@ -9,7 +9,7 @@ import BlogPage from './BlogPage/BlogPage';
 import BlogArchive from './BlogArchive/BlogArchive';
 import AppBlogDetail from './AppBlogDetail/AppBlogDetail';
 import ErrorPage from './Error/Error';
-import WebFont from 'webfontloader';
+// import WebFont from 'webfontloader';
 
 function generateYearList(length) {
     return Array.from({ length: length }, (v, i) => `${i + 2018}`);
@@ -34,15 +34,15 @@ ReactDOM.render((
     </Router>
 ), document.getElementById('root'));
 
-WebFont.load({
-    custom: {
-      families: ['1essfont'],
-      urls: [
-        '/font/font.css',
-      ]
-    },
-    timeout: 5000
-  });
+// WebFont.load({
+//     custom: {
+//       families: ['1essfont'],
+//       urls: [
+//         '/font/font.css',
+//       ]
+//     },
+//     timeout: 5000
+//   });
 
 function getMultiLine(lines) {
     lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));
