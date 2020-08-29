@@ -12,6 +12,7 @@ const Nav = ({ selectedIndex }) => (
             <NavLinks selectedIndex={selectedIndex} />
             <a href="https://www.zhihu.com/people/19921213/answers" className="navbar-item">Zhihu</a>
             <a href="https://github.com/1ess" className="navbar-item">GitHub</a>
+            <a href="https://afdian.net/@0xfee1dead" className="navbar-item">Sponsor</a>
         </div>
     </div>
 )
