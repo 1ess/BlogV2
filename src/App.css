@@ -13878,3 +13878,31 @@ print {
     padding-top: 5rem;
   }
 }
+
+.hello h2{
+  font-family: 'h4cker' !important;
+}
+
+.hello h4{
+  font-family: 'h4cker' !important;
+}
+
+.hello p{
+  font-family: 'h4cker' !important;
+}
+
+.hello a{
+  font-family: 'h4cker' !important;
+}
+
+.beian {
+  font-family: 'h4cker' !important;
+}
+
+#mainNav a {
+  font-family: 'h4cker' !important;
+}
+
+.navbar-item {
+  font-family: 'h4cker' !important;
+}
