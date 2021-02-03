@@ -1,5 +1,10 @@
-  @font-face{
-      font-family: '1essfont';
-      src: url('/font/blog.woff2');
-      font-display: fallback;
-  }
+@font-face {
+    font-family: "0xfee1dead";
+    src: url("/font/文鼎PL简中楷.eot"); /* IE9 */
+    src: 
+    url("/font/文鼎PL简中楷.woff") format("woff"), /* chrome、firefox */
+    url("/font/文鼎PL简中楷.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("/font/文鼎PL简中楷.svg#文鼎PL简中楷") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}

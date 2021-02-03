@@ -14,9 +14,5 @@ code {
 }
   
 body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, code, pre {
-  font-family: '1essfont' !important;
+  font-family: '0xfee1dead' !important;
 }
-
-/* .wf-active {
-  font-family: '1essfont' !important;
-} */
