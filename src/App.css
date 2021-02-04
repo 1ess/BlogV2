@@ -205,7 +205,9 @@ pre {
 
 pre code {
   font-size: 1em;
-  padding: 0
+  padding: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap; 
 }
 
 table td,
