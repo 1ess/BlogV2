@@ -8,7 +8,7 @@ import '../config.js';
 
 const CardHeader = ({number}) => (
     <div className="card-header bg-gray">
-        <div className="card-image lazy" data-bg={`url(${global.constants.host}/blogImg/Blog${number}.jpg)`}></div>
+        <div className="card-image lazy" data-bg={`url(${global.constants.image_host}/blogImg/Blog${number}.jpg)`}></div>
     </div>
 )
 

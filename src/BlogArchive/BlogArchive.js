@@ -6,8 +6,6 @@ import '../config.js';
 
 const BlogArchiveContainer = React.lazy(() => import("../BlogArchiveContainer/BlogArchiveContainer"));
 
-
-
 export default class BlogArchive extends Component {
     constructor(props) {
         super(props);
