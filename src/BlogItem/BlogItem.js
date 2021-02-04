@@ -4,10 +4,11 @@ import {Link} from 'react-router-dom';
 
 import '../App.css';
 import '../Blog.css';
+import '../config.js';
 
 const CardHeader = ({number}) => (
     <div className="card-header bg-gray">
-        <div className="card-image lazy" data-bg={`url(../blogImg/Blog${number}.jpg)`}></div>
+        <div className="card-image lazy" data-bg={`url(${global.constants.host}/blogImg/Blog${number}.jpg)`}></div>
     </div>
 )
 
