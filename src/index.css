@@ -8,13 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+code { 
+  font-family: 'Fira Code', monospace; 
 }
-  
-body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, code, pre, th, td {
-  font-family: '0xfee1dead';
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, th, td {
+  font-family: 'blog';
 }
 
 a {

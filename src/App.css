@@ -129,7 +129,6 @@ code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: monospace
 }
 
 body {
@@ -13882,37 +13881,37 @@ print {
 }
 
 .hello h2{
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .hello h4{
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .hello p{
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .hello a{
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .beian {
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 #mainNav a {
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .navbar-item {
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .menu-label {
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
 
 .menu-list li a {
-  font-family: 'h4cker' !important;
+  font-family: 'blog' !important;
 }
