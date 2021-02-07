@@ -20,7 +20,7 @@ const Summary = ({blog_link}) => (
             </p>
             <p>
                 If you happen to speak Chinese, you can also find me on 
-                <a className={`zhihu-link shadow is-danger`} href="https://www.zhihu.com/people/19921213/answers"> 知乎</a> or <a className={`weibo-link shadow is-danger`} href="https://weibo.com/fee1dead">微博</a> for more up-to-date content.
+                <a className={`zhihu-link shadow is-danger`} href="https://www.zhihu.com/people/19921213/answers"> 知乎</a> or <a className={`weibo-link shadow is-danger`} href="https://weibo.com/zdd19921213">微博</a> for more up-to-date content.
             </p>
             <p>
                 Outside of programming, I enjoy staying with my wife and going on a road trip.
