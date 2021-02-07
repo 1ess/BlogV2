@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import messageImg from '../undraw_hacker_mind.svg';
+import '../config.js';
 
 const Introduction = ({className = '', introduction}) => (
     <span className={(`shadow ${className}`).trim()}>{introduction}</span>
@@ -33,7 +33,7 @@ const Picture = () => (
     <div className="column is-5 is-offset-1">
         <div id="messages" className="messages">
             <div className="message is-shown">
-                <img className="message-img" src={messageImg} alt={``} />
+                <img className="message-img" src={`${global.constants.image_host}/h4cker/undraw_hacker_mind.svg`} alt={``} />
             </div>
         </div>
     </div>
