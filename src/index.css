@@ -13,7 +13,7 @@ code {
 }
 
 body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, li a,  li span, li a, li span, th, td {
-  font-family: '-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif';
+  font-family: "GT Eesti Display", -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
 }
 
 a {
