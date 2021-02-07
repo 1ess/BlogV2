@@ -4,7 +4,7 @@ import NavLinks from '../NavLinks/NavLinks';
 import burger from '../ev';
 
 import '../App.css';
-import icon from '../icon.jpg';
+import '../config.js';
 
 const Nav = ({ selectedIndex }) => (
     <div className="navbar-menu" id="mainNav">
@@ -48,7 +48,7 @@ export default class Header extends Component {
             <header className="app-header">
                 <nav className="navbar is-fixed-top is-small">
                     <div className="container">
-                        <NavBrand icon={icon} symbol={symbol} />
+                        <NavBrand icon={`${global.constants.image_host}/h4cker/icon.jpg`} symbol={symbol} />
                         <Nav selectedIndex={selectedIndex} />
                     </div>
                 </nav>
