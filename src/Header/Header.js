@@ -48,7 +48,7 @@ export default class Header extends Component {
             <header className="app-header">
                 <nav className="navbar is-fixed-top is-small">
                     <div className="container">
-                        <NavBrand icon={`${global.constants.image_host}/h4cker/icon.jpg`} symbol={symbol} />
+                        <NavBrand icon={`${global.constants.image_host}/h4cker/cat.jpg`} symbol={symbol} />
                         <Nav selectedIndex={selectedIndex} />
                     </div>
                 </nav>
