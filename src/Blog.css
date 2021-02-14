@@ -65,3 +65,7 @@ print {
     color: #666 !important;
     text-decoration: none;
 }
+
+.container-bg {
+    background: url('https://cdn.jsdelivr.net/gh/1ess/cdn/h4cker/bg.svg') center center/cover no-repeat;
+}
