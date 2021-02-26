@@ -27,10 +27,8 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
     - name: Execute SSH commmands on remote server
       uses: JimCronqvist/action-ssh@master
-      env:
-        NAME: "Root"
       with:
-        hosts: '106.54.43.50'
+        hosts: 'root@0xfee1dead.cn'
         privateKey: ${{ secrets.SERVER_SSH_KEY }}
         debug: false
         command: |
