@@ -42,7 +42,7 @@ jobs:
           rm static/js/*.js
           cp ~/nginx/html/blog/static/css/*.css static/css/
           cp ~/nginx/html/blog/static/js/*.js static/js/
-          git add .
+          git add -A
           git commit -m 'Add New Version Of Blog!'
           git push
           sed -i "s/\href=\"\//\href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
