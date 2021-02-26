@@ -25,9 +25,14 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-    - name: Send Push Notification
-      uses: techulus/push-github-action@1.0.0
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
       env:
-        API_KEY: ${{ secrets.API_KEY }}
-        MESSAGE: "谁终将声震人间, 必长久深自缄默。谁终将点燃闪电, 必长久如云飘泊。"
-        TITLE: 部署成功
+        NAME: "Root"
+      with:
+        hosts: '106.54.43.50'
+        privateKey: ${{ secrets.SERVER_SSH_KEY }}
+        debug: false
+        command: |
+          git config --local user.email "github-actions[bot].pipelining@qq.com"
+          git config --local user.name "github-actions[bot]"
