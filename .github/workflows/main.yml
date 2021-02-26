@@ -36,14 +36,14 @@ jobs:
           git config --global user.email "github-actions[bot].pipelining@qq.com"
           git config --global user.name "github-actions[bot]"
           cd /root
-          git clone https://github.com/1ess/cdn.git
-          cd cdn/
+          git clone git@github.com:1ess/deploy.git
+          cd deploy/
           rm static/css/*.css
           rm static/js/*.js
           cp ~/nginx/html/blog/static/css/*.css static/css/
           cp ~/nginx/html/blog/static/js/*.js static/js/
           git add .
-          git commit -m "Add New Version Of Blog!"
-          git push -u origin master
-          sed -i "s/\href=\"\//\href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/cdn\//g" ~/nginx/html/blog/index.html
-          rm /root/cdn
+          git commit -m 'Add New Version Of Blog!'
+          git push
+          sed -i "s/\href=\"\//\href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
+          rm -rf /root/deploy/*
