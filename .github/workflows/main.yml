@@ -29,7 +29,7 @@ jobs:
       uses: JimCronqvist/action-ssh@master
       with:
         hosts: 'root@0xfee1dead.cn'
-        privateKey: ${{ secrets.SERVER_SSH_KEY }}
+        privateKey: ${{ secrets.PRIVATE_KEY }}
         debug: false
         command: |
           git config --global user.email "github-actions[bot].pipelining@qq.com"
@@ -46,5 +46,3 @@ jobs:
           git push -u origin master
           sed -i "s/\href=\"\//\href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/cdn\//g" ~/nginx/html/blog/index.html
           rm /root/cdn
-
-
