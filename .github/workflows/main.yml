@@ -45,6 +45,6 @@ jobs:
           git add -A
           git commit -m 'Add New Version Of Blog!'
           git push
-          sed -i "s/\href=\"\//\href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
-          sed -i "s/\src=\"\//\src=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
+          sed -i "s/href=\"\//href=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
+          sed -i "s/src=\"\//src=\"https:\/\/cdn.jsdelivr.net\/gh\/1ess\/deploy\//g" ~/nginx/html/blog/index.html
           rm -rf /root/deploy/
